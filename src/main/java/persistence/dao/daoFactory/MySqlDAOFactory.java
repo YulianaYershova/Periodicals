@@ -1,0 +1,51 @@
+package persistence.dao.daoFactory;
+
+import persistence.dao.*;
+import persistence.dao.mySqlDAOImpl.*;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+/**
+ * Created by Julia on 09.08.2018
+ */
+public class MySqlDAOFactory extends DAOFactory {
+
+    @Override
+    public IPayment getPaymentDAO() {
+        return PaymentDAO.getInstance();
+    }
+
+    @Override
+    public IPeriodical getPeriodicalDAO() {
+        return PeriodicalDAO.getInstance();
+    }
+
+    @Override
+    public IPeriodicalCategory getPeriodicalCategoryDAO() {
+        return PeriodicalCategoryDAO.getInstance();
+    }
+
+    @Override
+    public IPeriodicalType getPeriodicalType() {
+        return PeriodicalTypeDAO.getInstance();
+    }
+
+    @Override
+    public ISubscription getSubscriptionDAO() {
+        return SubscriptionDAO.getInstance();
+    }
+
+    @Override
+    public IUser getUserDAO() {
+        return UserDAO.getInstance();
+    }
+
+    @Override
+    public IUserRole getUserTypeDAO() {
+        return UserRoleDAO.getInstance();
+    }
+}
