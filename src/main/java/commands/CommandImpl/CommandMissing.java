@@ -13,7 +13,8 @@ import java.io.IOException;
  */
 public class CommandMissing implements ICommand {
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         return Config.getInstance().getProperty(Config.LOGIN);
     }
+
 }

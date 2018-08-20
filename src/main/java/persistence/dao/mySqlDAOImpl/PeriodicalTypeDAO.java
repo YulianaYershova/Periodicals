@@ -14,8 +14,7 @@ import java.sql.Statement;
 public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
 
     private static PeriodicalTypeDAO periodicalTypeDAO;
-    private final String FIND_TYPE_BY_ID = "SELECT * FROM periodical_type WHERE periodical_type.id= ?";
-    private final String FIND_TYPE_BY_PERIODICAL_TYPE = "SELECT * FROM periodical_type WHERE periodical_type.type= ?";
+    private final String SELECT_ALL_FROM_PERIODICAL_TYPE = "SELECT * FROM periodical_type ";
     private final String INSERT_TYPE = "INSERT INTO periodical_type (type) VALUES (?)";
     private final String UPDATE_TYPE = "UPDATE periodical_type SET periodical_type.type = ? WHERE periodical_type.id = ?";
 
@@ -35,7 +34,7 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
     public PeriodicalType findTypeById(int id) {
         PeriodicalType type = null;
 
-        type = findById(FIND_TYPE_BY_ID, id,
+        type = findById(SELECT_ALL_FROM_PERIODICAL_TYPE+"WHERE periodical_type.id= ?", id,
                 set -> set != null ? new PeriodicalType(
                         set.getInt(id),
                         set.getString("type")) : null);

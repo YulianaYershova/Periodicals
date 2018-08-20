@@ -14,24 +14,19 @@ import java.util.ArrayList;
 public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
 
     private static PeriodicalDAO periodicalDAO;
-    private final String FIND_PERIODICAL_BY_ID = "SELECT periodical.id, periodical.type AS type_id," +
-            "periodical_type.type, periodical.category AS category_id, periodical_category.category, " +
-            "periodical.period, periodical.price, periodical.description " +
-            "FROM periodical INNER JOIN periodical_type ON(periodical.type = periodical_type.id) " +
-            "INNER JOIN periodical_category ON (periodical.category = periodical_category.id)" +
-            "WHERE periodical.id = ?";
 
-    private final String FIND_ALL_PERIODICALS = "SELECT periodical.id, periodical.type AS type_id, periodical_type.type," +
-            "periodical.category AS category_id, periodical_category.category, periodical.period, " +
-            "periodical.price, periodical.description " +
-            "FROM periodical INNER JOIN periodical_type ON(periodical.type = periodical_type.id) " +
-            "INNER JOIN periodical_category ON (periodical.category = periodical_category.id)";
+    private final String SELECT_ALL_FROM_PERIODICAL = "SELECT periodical.id, periodical.title, periodical.periodical_type," +
+            "periodical_type.type, periodical.periodical_category, periodical_category.category, " +
+            "periodical.period, periodical.price, periodical.description FROM periodical INNER JOIN periodical_type " +
+            "ON(periodical.periodical_type = periodical_type.id) " +
+            "INNER JOIN periodical_category ON (periodical.periodical_category = periodical_category.id) ";
 
-    private final String INSERT_PERIODICAL = "INSERT INTO periodical (type, category, period, price, description) " +
-            "VALUES (?,?,?,?,?)";
+    private final String INSERT_PERIODICAL = "INSERT INTO periodical (title,periodical_type, periodical_category, " +
+            "period, price, description) " +
+            "VALUES (?,?,?,?,?,?)";
 
-    private final String UPDATE_PERIODICAL = "UPDATE periodical SET periodical.type = ?, periodical.category = ?," +
-            "periodical.period = ?, periodical.price = ?, periodical.description =? " +
+    private final String UPDATE_PERIODICAL = "UPDATE periodical SET periodical.title=?, periodical.periodical_type = ?, " +
+            "periodical_category = ?, periodical.period = ?, periodical.price = ?, periodical.description =? " +
             "WHERE periodical.id = ?";
 
     private PeriodicalDAO() {
@@ -48,11 +43,12 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
     @Override
     public Periodical findPeriodicalById(int id) {
         Periodical periodical = null;
-        periodical = findById(FIND_PERIODICAL_BY_ID, id,
+        periodical = findById(SELECT_ALL_FROM_PERIODICAL + "WHERE periodical.id = ?;", id,
                 set -> set != null ? new Periodical(
                         set.getInt(id),
-                        new PeriodicalType(set.getInt("type_id"), set.getString("type")),
-                        new PeriodicalCategory(set.getInt("category_id"), set.getString("category")),
+                        set.getString("title"),
+                        new PeriodicalType(set.getInt("periodical_type"), set.getString("type")),
+                        new PeriodicalCategory(set.getInt("periodical_category"), set.getString("category")),
                         set.getString("period"),
                         set.getBigDecimal("price"),
                         set.getString("description")) : null);
@@ -60,15 +56,16 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
     }
 
     @Override
-    public ArrayList<Periodical> getAllPeriodicals() {
-        ArrayList<Periodical> periodicals = null;
+    public ArrayList<Periodical> findAllPeriodicals() {
+        ArrayList<Periodical> periodicals = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
-            try (ResultSet resultSet = statement.executeQuery(FIND_ALL_PERIODICALS)) {
+            try (ResultSet resultSet = statement.executeQuery(SELECT_ALL_FROM_PERIODICAL)) {
                 while (resultSet.next()) {
                     Periodical periodical = new Periodical(resultSet.getInt("id"),
-                            new PeriodicalType(resultSet.getInt("type_id"), resultSet.getString("type")),
-                            new PeriodicalCategory(resultSet.getInt("category_id"), resultSet.getString("category")),
+                            resultSet.getString("title"),
+                            new PeriodicalType(resultSet.getInt("periodical_type"), resultSet.getString("type")),
+                            new PeriodicalCategory(resultSet.getInt("periodical_category"), resultSet.getString("category")),
                             resultSet.getString("period"),
                             resultSet.getBigDecimal("price"),
                             resultSet.getString("description"));
@@ -85,11 +82,12 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
     public boolean insertPeriodical(Periodical periodical) {
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(INSERT_PERIODICAL, Statement.RETURN_GENERATED_KEYS)) {
-            statement.setInt(1, periodical.getType().getId());
-            statement.setInt(2, periodical.getCategory().getId());
-            statement.setString(3, periodical.getPeriod());
-            statement.setBigDecimal(4, periodical.getPrice());
-            statement.setString(5, periodical.getDescription());
+            statement.setString(1, periodical.getTitle());
+            statement.setInt(2, periodical.getPeriodicalType().getId());
+            statement.setInt(3, periodical.getPeriodicalCategory().getId());
+            statement.setString(4, periodical.getPeriod());
+            statement.setBigDecimal(5, periodical.getPrice());
+            statement.setString(6, periodical.getDescription());
 
             if (statement.executeUpdate() != 0) {
                 periodical.setId(getGeneratedKey(statement));
@@ -106,11 +104,12 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
     public boolean updatePeriodical(Periodical periodical) {
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_PERIODICAL)) {
-            statement.setInt(1, periodical.getType().getId());
-            statement.setInt(2, periodical.getCategory().getId());
-            statement.setString(3, periodical.getPeriod());
-            statement.setBigDecimal(4, periodical.getPrice());
-            statement.setString(5, periodical.getDescription());
+            statement.setString(1, periodical.getTitle());
+            statement.setInt(2, periodical.getPeriodicalType().getId());
+            statement.setInt(3, periodical.getPeriodicalCategory().getId());
+            statement.setString(4, periodical.getPeriod());
+            statement.setBigDecimal(5, periodical.getPrice());
+            statement.setString(6, periodical.getDescription());
             if (statement.executeUpdate() != 0) {
                 return true;
             }

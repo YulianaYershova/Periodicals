@@ -7,15 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <link rel="stylesheet" href="/css/style.css"/>
-</head>
 <body>
 <div style="padding: 5px;" align="center">
 
     <a href="${pageContext.request.contextPath}/">Home</a>
     |
-    <a href="${pageContext.request.contextPath}/logout">Logout</a>
+    <a href="Controller">Logout</a>
 
 </div>
 </body>

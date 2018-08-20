@@ -11,8 +11,9 @@ import java.util.Objects;
 public class Periodical implements Serializable {
 
     private int id;
-    private PeriodicalType type;
-    private PeriodicalCategory category;
+    private String title;
+    private PeriodicalType periodicalType;
+    private PeriodicalCategory periodicalCategory;
     private String period;
     private BigDecimal price;
     private String description;
@@ -20,10 +21,12 @@ public class Periodical implements Serializable {
     public Periodical() {
     }
 
-    public Periodical(int id, PeriodicalType type, PeriodicalCategory category, String period, BigDecimal price, String description) {
+    public Periodical(int id, String title, PeriodicalType periodicalType, PeriodicalCategory periodicalCategory,
+                      String period, BigDecimal price, String description) {
         this.id = id;
-        this.type = type;
-        this.category = category;
+        this.title = title;
+        this.periodicalType = periodicalType;
+        this.periodicalCategory = periodicalCategory;
         this.period = period;
         this.price = price;
         this.description = description;
@@ -33,12 +36,16 @@ public class Periodical implements Serializable {
         return id;
     }
 
-    public PeriodicalType getType() {
-        return type;
+    public String getTitle() {
+        return title;
     }
 
-    public PeriodicalCategory getCategory() {
-        return category;
+    public PeriodicalType getPeriodicalType() {
+        return periodicalType;
+    }
+
+    public PeriodicalCategory getPeriodicalCategory() {
+        return periodicalCategory;
     }
 
     public String getPeriod() {
@@ -57,12 +64,16 @@ public class Periodical implements Serializable {
         this.id = id;
     }
 
-    public void setType(PeriodicalType type) {
-        this.type = type;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setCategory(PeriodicalCategory category) {
-        this.category = category;
+    public void setPeriodicalType(PeriodicalType periodicalType) {
+        this.periodicalType = periodicalType;
+    }
+
+    public void setPeriodicalCategory(PeriodicalCategory periodicalCategory) {
+        this.periodicalCategory = periodicalCategory;
     }
 
     public void setPeriod(String period) {
@@ -83,8 +94,9 @@ public class Periodical implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Periodical that = (Periodical) o;
         return id == that.id &&
-                Objects.equals(type, that.type) &&
-                Objects.equals(category, that.category) &&
+                Objects.equals(title, that.title) &&
+                Objects.equals(periodicalType, that.periodicalType) &&
+                Objects.equals(periodicalCategory, that.periodicalCategory) &&
                 Objects.equals(period, that.period) &&
                 Objects.equals(price, that.price) &&
                 Objects.equals(description, that.description);
@@ -92,15 +104,16 @@ public class Periodical implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, category, period, price, description);
+        return Objects.hash(id, title, periodicalType, periodicalCategory, period, price, description);
     }
 
     @Override
     public String toString() {
         return "Periodical{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
-                ", category=" + category +
+                ", title='" + title + '\'' +
+                ", periodicalType=" + periodicalType +
+                ", periodicalCategory=" + periodicalCategory +
                 ", period='" + period + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +

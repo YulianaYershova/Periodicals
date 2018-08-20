@@ -30,7 +30,7 @@ public class MySqlDAOFactory extends DAOFactory {
     }
 
     @Override
-    public IPeriodicalType getPeriodicalType() {
+    public IPeriodicalType getPeriodicalTypeDAO() {
         return PeriodicalTypeDAO.getInstance();
     }
 
@@ -45,7 +45,7 @@ public class MySqlDAOFactory extends DAOFactory {
     }
 
     @Override
-    public IUserRole getUserTypeDAO() {
+    public IUserRole getUserRoleDAO() {
         return UserRoleDAO.getInstance();
     }
 }

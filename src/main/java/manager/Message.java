@@ -9,9 +9,11 @@ public class Message {
     private static Message message;
     private ResourceBundle resourceBundle;
     private static final String BUNDLE_NAME = "messages";
-    public static final String SERVLET_EXECPTION = "SERVLET_EXCEPTION";
+    public static final String SERVLET_EXCEPTION = "SERVLET_EXCEPTION";
     public static final String IO_EXCEPTION = "IO_EXCEPTION";
     public static final String LOGIN_ERROR = "LOGIN_ERROR";
+    public static final String INCORRECT_LOGIN = "INCORRECT_LOGIN";
+    public static final String INCORRECT_PASSWORD = "INCORRECT_PASSWORD";
 
     public static Message getInstance() {
         if (message == null) {

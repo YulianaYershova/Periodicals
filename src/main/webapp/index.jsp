@@ -1,13 +1,10 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title></title>
 </head>
 <body>
-<h2>Hello World!</h2>
-Hello
-<a href="Controller">Login</a>
-<%=request.getRemoteHost()%>
-
+<jsp:forward page="WEB-INF/jsp/main.jsp"/>
 </body>
 </html>

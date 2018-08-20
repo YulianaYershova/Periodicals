@@ -16,15 +16,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
     DAOFactory daoFactory = new MySqlDAOFactory();
 
     private static SubscriptionDAO subscriptionDAO;
-    private final String FIND_SUBSCRIPTION_BY_ID = "SELECT subscription.id, subscription.user_id, " +
-            "subscription.periodical_id, " +
-            "subscription.payment_id, subscription.expiration_date " +
-            "FROM subscription " +
-            "WHERE subscription.id = ?";
-
-    private final String FIND_ALL_SUBSCRIPTIONS = "SELECT subscription.id, subscription.user_id, " +
-            "subscription.periodical_id, subscription.payment_id, subscription.expiration_date " +
-            "From subscription ; ";
+    private final String SELECT_ALL_FROM_SUBSCRIPTION = "SELECT * FROM subscription ";
 
     private final String INSERT_SUBSCRIPTION = "INSERT INTO subscription (user_id, periodical_id, payment_id, expiration_date) " +
             "VALUES (?,?,?,?)";
@@ -44,11 +36,10 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
     }
 
 
-
     @Override
     public Subscription findSubscriptionById(int id) {
         Subscription subscription = null;
-        subscription = findById(FIND_SUBSCRIPTION_BY_ID, id,
+        subscription = findById(SELECT_ALL_FROM_SUBSCRIPTION + "WHERE subscription.id = ?", id,
                 set -> set != null ? new Subscription(
                         set.getInt(id),
                         daoFactory.getUserDAO().findUserById(set.getInt("user_id")),
@@ -60,10 +51,10 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
 
     @Override
     public ArrayList<Subscription> getAllSubscription() {
-        ArrayList<Subscription> subscriptions = null;
+        ArrayList<Subscription> subscriptions = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
-            try (ResultSet resultSet = statement.executeQuery(FIND_ALL_SUBSCRIPTIONS)) {
+            try (ResultSet resultSet = statement.executeQuery(SELECT_ALL_FROM_SUBSCRIPTION)) {
                 while (resultSet.next()) {
                     Subscription subscription = new Subscription(resultSet.getInt("id"),
                             daoFactory.getUserDAO().findUserById(resultSet.getInt("user_id")),

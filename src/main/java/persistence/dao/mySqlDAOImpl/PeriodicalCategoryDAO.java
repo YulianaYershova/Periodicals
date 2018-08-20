@@ -12,10 +12,8 @@ import java.util.ArrayList;
 public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCategory {
 
     private static PeriodicalCategoryDAO periodicalCategoryDAO;
-    private final String FIND_CATEGORY_BY_ID = "SELECT * FROM periodical_category WHERE periodical_category.id= ?";
-    private final String FIND_ALL_CATEGORIES = "SELECT * FROM periodical_category";
-    private final String FIND_CATEGORY_BY_PERIODICAL_CATEGORY = "SELECT * FROM periodical_category " +
-            "WHERE periodical_category.category= ?";
+
+    private final String SELECT_ALL_FROM_PERIODICAL_CATEGORY = "SELECT * FROM periodical_category ";
     private final String INSERT_CATEGORY = "INSERT INTO periodical_category (category) VALUES (?)";
     private final String UPDATE_CATEGORY = "UPDATE periodical_category SET periodical_category.category = ? " +
             "WHERE periodical_category.id = ?";
@@ -35,7 +33,7 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
     public PeriodicalCategory findCategoryById(int id) {
         PeriodicalCategory category = null;
 
-        category = findById(FIND_CATEGORY_BY_ID, id,
+        category = findById(SELECT_ALL_FROM_PERIODICAL_CATEGORY + "WHERE periodical_category.id= ?", id,
                 set -> set != null ? new PeriodicalCategory(
                         set.getInt(id),
                         set.getString("category")) : null);
@@ -45,11 +43,11 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
 
     @Override
     public ArrayList<PeriodicalCategory> getAllCategories() {
-        ArrayList<PeriodicalCategory> categories = null;
+        ArrayList<PeriodicalCategory> categories = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
 
-            try (ResultSet resultSet = statement.executeQuery(FIND_ALL_CATEGORIES)) {
+            try (ResultSet resultSet = statement.executeQuery(SELECT_ALL_FROM_PERIODICAL_CATEGORY)) {
                 while (resultSet.next()) {
                     PeriodicalCategory category = new PeriodicalCategory(resultSet.getInt("id"),
                             resultSet.getString("category"));

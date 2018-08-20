@@ -12,8 +12,7 @@ import java.sql.*;
 public class UserRoleDAO extends AbstractDAO implements IUserRole {
 
     private static UserRoleDAO userRoleDAO;
-    private final String FIND_USER_ROLE_BY_ID = "SELECT * FROM user_role WHERE user_role.id= ?";
-    private final String FIND_USER_ROLE_BY_ROLE = "SELECT * FROM user_role WHERE user_role.role= ?";
+    private final String SELECT_ALL_FROM_USER_ROLE = "SELECT * FROM user_role ";
     private final String INSERT_USER_ROLE = "INSERT INTO user_role (role) VALUES (?)";
     private final String UPDATE_USER_ROLE = "UPDATE user_role SET user_role.role = ? WHERE user_role.id = ?";
 
@@ -30,7 +29,7 @@ public class UserRoleDAO extends AbstractDAO implements IUserRole {
     @Override
     public UserRole findUserRoleById(int id) {
         UserRole role = null;
-        role = findById(FIND_USER_ROLE_BY_ID, id,
+        role = findById(SELECT_ALL_FROM_USER_ROLE + "WHERE user_role.id= ?", id,
                 set -> set != null ? new UserRole(
                         set.getInt(id),
                         set.getString("role")) : null);
@@ -41,8 +40,8 @@ public class UserRoleDAO extends AbstractDAO implements IUserRole {
     public UserRole findUserRoleByRole(String role) {
         UserRole userRole = null;
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(FIND_USER_ROLE_BY_ROLE)) {
-            statement.setString(1, "role");
+             PreparedStatement statement = connection.prepareStatement(SELECT_ALL_FROM_USER_ROLE + "WHERE user_role.role= ?")) {
+            statement.setString(1, role);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     userRole = new UserRole(resultSet.getInt("id"),

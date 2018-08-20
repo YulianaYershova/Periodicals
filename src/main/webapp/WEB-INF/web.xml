@@ -15,5 +15,22 @@
         <res-auth>Container</res-auth>
     </resource-ref>
 
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>servlet.Controller</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/register</url-pattern>
+        <url-pattern>/locale</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <location>/css/images/error.png</location>
+    </error-page>
+
 </web-app>
 

@@ -20,11 +20,11 @@ public abstract class DAOFactory {
 
     public abstract IPeriodicalCategory getPeriodicalCategoryDAO();
 
-    public abstract IPeriodicalType getPeriodicalType();
+    public abstract IPeriodicalType getPeriodicalTypeDAO();
 
     public abstract ISubscription getSubscriptionDAO();
 
     public abstract IUser getUserDAO();
 
-    public abstract IUserRole getUserTypeDAO();
+    public abstract IUserRole getUserRoleDAO();
 }

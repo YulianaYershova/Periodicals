@@ -1,8 +1,10 @@
 package service;
 
 import persistence.dao.IUser;
+import persistence.dao.IUserRole;
 import persistence.dao.daoFactory.DAOFactory;
 import persistence.entities.User;
+import persistence.entities.UserRole;
 
 /**
  * Created by Julia on 15.08.2018
@@ -10,15 +12,26 @@ import persistence.entities.User;
 public class UserService {
 
     private IUser iUser = DAOFactory.getMySqlDAOFactory().getUserDAO();
+    private IUserRole iUserRole = DAOFactory.getMySqlDAOFactory().getUserRoleDAO();
 
-    public boolean login(String login, String password) {
-        User u = iUser.findUserById(1);
-        User user = iUser.findUserByLogin(login);
-        if (user != null) {
-            if (user.getPassword().equals(password))
-                return true;
+    public User login(String login, String password) {
+        User user = getUserByLogin(login);
+        if (user != null && user.getPassword().equals(password)) {
+            return user;
         }
-        return false;
+        return null;
+    }
+
+    public boolean register(User user) {
+        return iUser.insertUser(user);
+    }
+
+    public UserRole getUserRole(String role) {
+        return iUserRole.findUserRoleByRole(role);
+    }
+
+    public User getUserByLogin(String login) {
+        return iUser.findUserByLogin(login);
     }
 
 }

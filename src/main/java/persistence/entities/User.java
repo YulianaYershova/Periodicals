@@ -10,7 +10,7 @@ import java.util.Objects;
 public class User implements Serializable {
 
     private int id;
-    private UserRole role;
+    private UserRole userRole;
     private String name;
     private String login;
     private String password;
@@ -18,16 +18,16 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(int id, UserRole role, String name, String login, String password) {
+    public User(int id, UserRole userRole, String name, String login, String password) {
         this.id = id;
-        this.role = role;
+        this.userRole = userRole;
         this.name = name;
         this.login = login;
         this.password = password;
     }
 
-    public User(UserRole role, String name, String login, String password) {
-        this.role = role;
+    public User(UserRole userRole, String name, String login, String password) {
+        this.userRole = userRole;
         this.name = name;
         this.login = login;
         this.password = password;
@@ -37,8 +37,8 @@ public class User implements Serializable {
         return id;
     }
 
-    public UserRole getRole() {
-        return role;
+    public UserRole getUserRole() {
+        return userRole;
     }
 
     public String getName() {
@@ -57,8 +57,8 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 
     public void setName(String name) {
@@ -79,7 +79,7 @@ public class User implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return id == user.id &&
-                Objects.equals(role, user.role) &&
+                Objects.equals(userRole, user.userRole) &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(login, user.login) &&
                 Objects.equals(password, user.password);
@@ -87,14 +87,14 @@ public class User implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, role, name, login, password);
+        return Objects.hash(id, userRole, name, login, password);
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", role=" + role +
+                ", userRole=" + userRole +
                 ", name='" + name + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +

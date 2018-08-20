@@ -22,7 +22,7 @@ public interface IPeriodical {
      *
      * @return - list of periodicals
      */
-    ArrayList<Periodical> getAllPeriodicals();
+    ArrayList<Periodical> findAllPeriodicals();
 
     /**
      * Insert new periodical

@@ -13,10 +13,7 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
 
     private static PaymentDAO paymentDAO;
 
-    private final String FIND_PAYMENT_BY_ID = "SELECT payment.id, payment.date, payment.price " +
-            "FROM payment WHERE payment.id = ?";
-
-    private final String FIND_ALL_PAYMENTS = "SELECT * FROM payment";
+    private final String SELECT_ALL_FROM_PAYMENT = "SELECT * FROM payment ";
 
     private final String INSERT_PAYMENT = "INSERT INTO payment (date, price) " +
             "VALUES (?,?)";
@@ -29,7 +26,7 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
 
     public static PaymentDAO getInstance() {
         if (paymentDAO == null) {
-            paymentDAO=new PaymentDAO();
+            paymentDAO = new PaymentDAO();
         }
         return paymentDAO;
     }
@@ -38,7 +35,7 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
     @Override
     public Payment findPaymentById(int id) {
         Payment payment = null;
-        payment = findById(FIND_PAYMENT_BY_ID, id,
+        payment = findById(SELECT_ALL_FROM_PAYMENT + " WHERE payment.id = ?", id,
                 set -> set != null ? new Payment(
                         set.getInt(id),
                         set.getTimestamp("date"),
@@ -48,10 +45,10 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
 
     @Override
     public ArrayList<Payment> getAllPayments() {
-        ArrayList<Payment> payments = null;
+        ArrayList<Payment> payments = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
-            try (ResultSet resultSet = statement.executeQuery(FIND_ALL_PAYMENTS)) {
+            try (ResultSet resultSet = statement.executeQuery(SELECT_ALL_FROM_PAYMENT)) {
                 while (resultSet.next()) {
                     Payment payment = new Payment(resultSet.getInt("id"),
                             resultSet.getTimestamp("date"),
