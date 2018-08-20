@@ -24,7 +24,7 @@
         <c:forEach var="item" items="${periodicals}">
             <li>
                 <a href="">
-                    <div class="type"><c:out value="${item.getPeriodicalType().getType()}"></c:out></div>
+                    <div class="type"><c:out value="${item.getPeriodicalType().getType()}"/></div>
                     <div class="mainHeader">${item.getTitle()}</div>
                     <img src="../../css/images/image1.jpg" alt="image">
                     <p>Category: ${item.getPeriodicalCategory().getCategory()}</p>

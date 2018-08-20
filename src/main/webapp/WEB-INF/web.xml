@@ -28,9 +28,9 @@
         <url-pattern>/locale</url-pattern>
     </servlet-mapping>
 
-    <error-page>
+   <!-- <error-page>
         <location>/css/images/error.png</location>
-    </error-page>
+    </error-page>-->
 
 </web-app>
 

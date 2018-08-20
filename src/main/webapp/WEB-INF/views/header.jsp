@@ -20,22 +20,25 @@
         <a class="active" href="/">Home</a>
         <c:if test="${not access}">
             <a href="login">Login</a>
+            <a href="register">Registration</a>
         </c:if>
         <c:if test="${access}">
             <a href="logout">Logout</a>
         </c:if>
-        <a href="register">Registration</a>
+
     </div>
 
     <form name="localeForm" action="locale" method="post">
         <input type="hidden" name="command" value="locale">
         <div class="locale">
-            <button name="locale" value="en"><img src="../images/en.png"></button>
-            <button name="locale" value="ua"><img src="../images/ua.png"></button>
-            <button name="locale" value="ru"><img src="../images/ru.png"></button>
+            <button name="locale" value="en"><img src="../../css/images/en.png"></button>
+            <button name="locale" value="ua"><img src="../../css/images/ua.png"></button>
+            <button name="locale" value="ru"><img src="../../css/images/ru.png"></button>
             <%--<input type="hidden" name="src" value="/index.jsp">--%>
         </div>
     </form>
+
+
 </div>
 <div style="padding-left:20px; color: #555;">
     <h4><userTag:getinfo/></h4>

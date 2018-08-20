@@ -87,7 +87,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-.loginButton button {
+.submitButton button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -97,7 +97,7 @@ input[type=text], input[type=password] {
     width: 100%;
 }
 
-.loginContainer {
+.formContainer {
     width: 30%;
     margin: 30px auto;
     overflow: hidden;

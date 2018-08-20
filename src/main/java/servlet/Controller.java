@@ -1,11 +1,9 @@
 package servlet;
 
 import commands.ICommand;
-import manager.Message;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,11 +32,23 @@ public class Controller extends HttpServlet {
         String page = null;
 
         ICommand command = controllerHelper.getCommand(request);
-        page = command.execute(request, response);
+        if (command!=null) {
+            page = command.execute(request, response);
+            if(page.equals("/index.jsp")){
+                response.sendRedirect("/");
+            }else {
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+                dispatcher.forward(request, response);
+            }
+        }else {
+            String path ="/WEB-INF/pages"+request.getRequestURI()+".jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
+                dispatcher.forward(request, response);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-        dispatcher.forward(request, response);
+        }
 
+      /*  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+        dispatcher.forward(request, response);*/
     }
 
     /**

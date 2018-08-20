@@ -58,7 +58,8 @@ public class CommandRegistration implements ICommand {
             return page;
         }
         request.setAttribute("user", login);
-        return Config.getInstance().getProperty(Config.HOME);
+       /* return Config.getInstance().getProperty(Config.HOME);*/
+        return new CommandLogin().execute(request,response);
     }
 
 }

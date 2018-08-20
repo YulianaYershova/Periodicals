@@ -53,6 +53,5 @@
         <jsp:include page="../views/content.jsp"/>
     </c:otherwise>
 </c:choose>
-<jsp:include page="../views/footer.jsp"/>
 </body>
 </html>

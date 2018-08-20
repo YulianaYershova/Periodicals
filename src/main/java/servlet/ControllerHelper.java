@@ -16,7 +16,7 @@ public class ControllerHelper {
 
     private ControllerHelper() {
         commands.put("home", new CommandHomePage());
-        commands.put("registration", new CommandRegistration());
+        commands.put("register", new CommandRegistration());
         commands.put("login", new CommandLogin());
         commands.put("missing", new CommandMissing());
         commands.put("locale", new CommandLocale());
@@ -32,7 +32,8 @@ public class ControllerHelper {
     public ICommand getCommand(HttpServletRequest request) {
         ICommand command = commands.get(request.getParameter("command"));
         if (command == null) {
-            command = new CommandMissing();
+            //command = new CommandMissing();
+            return null;
         }
         return command;
     }
