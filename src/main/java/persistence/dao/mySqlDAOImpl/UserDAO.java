@@ -41,7 +41,7 @@ public class UserDAO extends AbstractDAO implements IUser {
         User user = null;
         user = findById(SELECT_ALL_FROM_USER + "WHERE user.id= ?", id,
                 set -> set != null ? new User(
-                        set.getInt(id),
+                        set.getInt("id"),
                         new UserRole(set.getInt("role_id"), set.getString("role")),
                         set.getString("name"),
                         set.getString("login"),

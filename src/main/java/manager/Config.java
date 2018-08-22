@@ -15,6 +15,7 @@ public class Config {
     public static final String HOME = "HOME";
     public static final String LOGIN = "LOGIN";
     public static final String REGISTRATION = "REGISTRATION";
+    public static final String PERIODICAL = "PERIODICAL";
     public static final String ERROR = "ERROR";
 
     public static Config getInstance() {

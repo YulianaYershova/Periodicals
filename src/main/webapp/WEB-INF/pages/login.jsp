@@ -13,21 +13,6 @@
 </head>
 <body>
 <jsp:include page="../views/header.jsp"/>
-<%--<form name="loginForm" action="/login" method="post">
-    <input type="hidden" name="command" value="login">
-    Login:
-    <br>
-    <input type="text" name="login" value="">
-    <br>
-    Password:
-    <br>
-    <input type="password" name="password" value="">
-    <br>
-    <input type="submit" value="Enter">
-    <br>
-    <a href="register">Create account</a>
-
-</form>--%>
 <form name="loginForm" action="login" method="post">
     <input type="hidden" name="command" value="login">
     <div class="formContainer">
@@ -43,6 +28,9 @@
 
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <label style="color: brown">
+        ${error}
         </label>
     </div>
 </form>

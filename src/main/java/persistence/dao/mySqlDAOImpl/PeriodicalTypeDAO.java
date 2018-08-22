@@ -36,7 +36,7 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
 
         type = findById(SELECT_ALL_FROM_PERIODICAL_TYPE+"WHERE periodical_type.id= ?", id,
                 set -> set != null ? new PeriodicalType(
-                        set.getInt(id),
+                        set.getInt("id"),
                         set.getString("type")) : null);
 
         return type;

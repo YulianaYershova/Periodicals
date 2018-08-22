@@ -32,23 +32,16 @@ public class Controller extends HttpServlet {
         String page = null;
 
         ICommand command = controllerHelper.getCommand(request);
-        if (command!=null) {
-            page = command.execute(request, response);
-            if(page.equals("/index.jsp")){
-                response.sendRedirect("/");
-            }else {
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-                dispatcher.forward(request, response);
-            }
-        }else {
-            String path ="/WEB-INF/pages"+request.getRequestURI()+".jsp";
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
-                dispatcher.forward(request, response);
-
+        // if (command!=null) {
+        page = command.execute(request, response);
+        if (page.equals("/index.jsp")) {
+            response.sendRedirect("/");
+        } else if (page.equals("/locale")) {
+            response.sendRedirect("/locale");
+        } else {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+            dispatcher.forward(request, response);
         }
-
-      /*  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-        dispatcher.forward(request, response);*/
     }
 
     /**

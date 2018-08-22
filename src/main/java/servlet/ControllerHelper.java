@@ -20,6 +20,8 @@ public class ControllerHelper {
         commands.put("login", new CommandLogin());
         commands.put("missing", new CommandMissing());
         commands.put("locale", new CommandLocale());
+        commands.put("logout", new CommandLogout());
+        commands.put("periodical", new CommandPeriodical());
     }
 
     public static ControllerHelper getInstance() {
@@ -32,8 +34,7 @@ public class ControllerHelper {
     public ICommand getCommand(HttpServletRequest request) {
         ICommand command = commands.get(request.getParameter("command"));
         if (command == null) {
-            //command = new CommandMissing();
-            return null;
+            command = new CommandMissing();
         }
         return command;
     }

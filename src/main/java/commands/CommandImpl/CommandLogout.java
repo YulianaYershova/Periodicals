@@ -9,14 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Julia on 19.08.2018
+ * Created by Julia on 21.08.2018
  */
-public class CommandLocale implements ICommand {
-
+public class CommandLogout implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String f= "g;";
-        request.getSession().setAttribute("locale" , request.getParameter("locale"));
+        request.getSession().invalidate();
         return Config.getInstance().getProperty(Config.HOME);
     }
 }

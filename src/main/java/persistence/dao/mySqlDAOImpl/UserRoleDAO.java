@@ -31,7 +31,7 @@ public class UserRoleDAO extends AbstractDAO implements IUserRole {
         UserRole role = null;
         role = findById(SELECT_ALL_FROM_USER_ROLE + "WHERE user_role.id= ?", id,
                 set -> set != null ? new UserRole(
-                        set.getInt(id),
+                        set.getInt("id"),
                         set.getString("role")) : null);
         return role;
     }

@@ -24,6 +24,7 @@
     color: firebrick;
     text-transform: uppercase;
 }
+
 /*
 Header style
 */
@@ -69,14 +70,18 @@ Header style
         display: block;
         text-align: left;
     }
+
     .header-right {
         float: none;
     }
 }
+
 /*
 Login style
 */
-form {border: 3px solid #f1f1f1;}
+form {
+    border: 3px solid #f1f1f1;
+}
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -134,10 +139,12 @@ span.psw {
         display: block;
         float: none;
     }
+
     .cancelBtn {
         width: 100%;
     }
 }
+
 /*
 Container style
 */
@@ -152,10 +159,43 @@ Container style
     float: left;
     font: 10px/1.5 Verdana, Helvetica, Sans-serif;
     width: 200px;
+    margin: 2% 2% 70px 3%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.periodical ul li {
+    list-style: none;
+    float: left;
+    font: 10px/1.5 Verdana, Helvetica, Sans-serif;
+    width: 200px;
     margin: 2% 2% 1px 3%;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.container ul li p {
+    margin-left: 6px;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.container ul li a {
+    text-decoration: none;
+    color: #333;
+    text-align: left;
+}
+
+.container img {
+
+    width: 150px;
+    height: 90px;
+    margin-left: 25px;
 
 }
 
@@ -176,27 +216,7 @@ Container style
     font-family: Parkavenue, cursive;
 }
 
-.container ul li p {
-
-    margin-left: 6px;
-    margin-right: 5px;
-}
-
-.container ul li a {
-    text-decoration: none;
-    color: #333;
-    text-align: left;
-}
-
-.container ul li a img {
-
-    width: 120px;
-    height: 70px;
-    margin-left: 40px;
-    max-width: 90%;
-}
-
-.locale img{
+.locale img {
     width: 20px;
     height: 20px;
 }

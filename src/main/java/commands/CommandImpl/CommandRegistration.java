@@ -51,15 +51,16 @@ public class CommandRegistration implements ICommand {
         if (!userService.register(user)) {
             request.setAttribute("error", Message.getInstance().getProperty(Message.LOGIN_ERROR));
             page = Config.getInstance().getProperty(Config.REGISTRATION);
-            ArrayList<Periodical> periodicals = periodicalService.getPeriodicals();
-            if (periodicals != null) {
-                request.getSession().setAttribute("periodicals", periodicals);
-            }
             return page;
         }
-        request.setAttribute("user", login);
-       /* return Config.getInstance().getProperty(Config.HOME);*/
-        return new CommandLogin().execute(request,response);
+        request.getSession().setAttribute("user", login);
+        request.getSession().setAttribute("role", user.getUserRole().getRole());
+        request.getSession().setAttribute("access", true);
+/*
+        request.getSession().setAttribute("periodicals", periodicalService.getPeriodicals());
+*/
+        return Config.getInstance().getProperty(Config.HOME);
+        /* return new CommandLogin().execute(request, response);*/
     }
 
 }

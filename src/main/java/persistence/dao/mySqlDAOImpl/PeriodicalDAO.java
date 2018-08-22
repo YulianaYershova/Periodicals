@@ -45,7 +45,7 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
         Periodical periodical = null;
         periodical = findById(SELECT_ALL_FROM_PERIODICAL + "WHERE periodical.id = ?;", id,
                 set -> set != null ? new Periodical(
-                        set.getInt(id),
+                        set.getInt("id"),
                         set.getString("title"),
                         new PeriodicalType(set.getInt("periodical_type"), set.getString("type")),
                         new PeriodicalCategory(set.getInt("periodical_category"), set.getString("category")),

@@ -37,7 +37,7 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
         Payment payment = null;
         payment = findById(SELECT_ALL_FROM_PAYMENT + " WHERE payment.id = ?", id,
                 set -> set != null ? new Payment(
-                        set.getInt(id),
+                        set.getInt("id"),
                         set.getTimestamp("date"),
                         set.getBigDecimal("price")) : null);
         return payment;

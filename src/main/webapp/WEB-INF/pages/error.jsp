@@ -11,12 +11,15 @@
     <title>Error</title>
 </head>
 <body>
-<h3>Error</h3>
+<%--<h3>Error</h3>--%>
+<%--
 <br>
 <jsp:expression>(request.getAttribute("error")!=null)?
     (String) request.getAttribute("error") : "unknown error"</jsp:expression>
 <br>
 <a href="Controller">Return to login page</a>
+--%>
+<jsp:include page="/login"/>
 
 </body>
 </html>

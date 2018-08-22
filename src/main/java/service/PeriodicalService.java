@@ -15,4 +15,8 @@ public class PeriodicalService {
     public ArrayList<Periodical> getPeriodicals() {
         return iPeriodical.findAllPeriodicals();
     }
+
+    public Periodical getPeriodical(int id) {
+        return iPeriodical.findPeriodicalById(id);
+    }
 }

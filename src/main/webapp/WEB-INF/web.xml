@@ -26,11 +26,40 @@
         <url-pattern>/login</url-pattern>
         <url-pattern>/register</url-pattern>
         <url-pattern>/locale</url-pattern>
+        <url-pattern>/logout</url-pattern>
+        <url-pattern>/periodical</url-pattern>
+        <url-pattern>/subscribe</url-pattern>
+
+
     </servlet-mapping>
 
-   <!-- <error-page>
-        <location>/css/images/error.png</location>
-    </error-page>-->
+    <filter>
+        <filter-name>Filter</filter-name>
+        <filter-class>servlet.Filter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Filter</filter-name>
+        <servlet-name>Controller</servlet-name>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>LoginRegisterFilter</filter-name>
+        <filter-class>servlet.LoginRegisterFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LoginRegisterFilter</filter-name>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/register</url-pattern>
+    </filter-mapping>
+
+    <!-- <error-page>
+         <location>/css/images/error.png</location>
+     </error-page>-->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
 
 </web-app>
 

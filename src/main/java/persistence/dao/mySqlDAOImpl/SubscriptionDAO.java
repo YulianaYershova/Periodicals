@@ -41,7 +41,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
         Subscription subscription = null;
         subscription = findById(SELECT_ALL_FROM_SUBSCRIPTION + "WHERE subscription.id = ?", id,
                 set -> set != null ? new Subscription(
-                        set.getInt(id),
+                        set.getInt("id"),
                         daoFactory.getUserDAO().findUserById(set.getInt("user_id")),
                         daoFactory.getPeriodicalDAO().findPeriodicalById(set.getInt("periodical_id")),
                         daoFactory.getPaymentDAO().findPaymentById(set.getInt("payment_id")),
