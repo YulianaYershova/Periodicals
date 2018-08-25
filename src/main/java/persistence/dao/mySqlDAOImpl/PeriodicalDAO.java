@@ -1,5 +1,7 @@
 package persistence.dao.mySqlDAOImpl;
 
+import logging.LoggerLoader;
+import org.apache.log4j.Logger;
 import persistence.dao.IPeriodical;
 import persistence.entities.Periodical;
 import persistence.entities.PeriodicalCategory;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
  * Created by Julia on 09.08.2018
  */
 public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
+    private static final Logger logger = LoggerLoader.getLogger(PeriodicalDAO.class);
+
 
     private static PeriodicalDAO periodicalDAO;
 
@@ -73,7 +77,7 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("findAllPeriodicals ", e);
         }
         return periodicals;
     }
@@ -95,7 +99,8 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("insertPeriodical ", e);
+
         }
         return false;
     }
@@ -114,7 +119,7 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("updatePeriodical ", e);
         }
         return false;
     }

@@ -5,14 +5,18 @@
   Time: 22:08
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 
 <html>
 <head>
     <title>Periodical</title>
+    <fmt:setLocale value="${locale}"/>
+    <fmt:setBundle basename="message"/>
 </head>
 <body>
+
 <jsp:include page="../views/header.jsp"/>
 <div class="container">
     <ul>
@@ -25,11 +29,11 @@
             <p>Price: ${item.getPrice()}</p>
             <p>Period: ${item.getPeriod()}</p>
             <p>
-                <span class="dropcaps">D</span>
-                <span class="red">esscription:</span> ${item.getDescription()}
+               <%-- <span class="dropcaps">D</span>--%>
+                <span class="red">Description:</span> ${item.getDescription()}
             </p>
             <form name="subscribeForm" action="subscribe" method="post">
-                <input type="hidden" name="subscribe" required>
+                <input type="hidden" name="command" value="subscribe" required>
                 <div class="submitButton">
                     <button type="submit">Subscribe</button>
                 </div>

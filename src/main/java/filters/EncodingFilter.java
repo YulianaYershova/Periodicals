@@ -1,4 +1,4 @@
-package servlet;
+package filters;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpFilter;
@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by Julia on 20.08.2018
  */
-public class Filter extends HttpFilter {
+public class EncodingFilter extends HttpFilter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

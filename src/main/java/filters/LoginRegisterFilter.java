@@ -1,4 +1,4 @@
-package servlet;
+package filters;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -11,10 +11,10 @@ import java.io.IOException;
 /**
  * Created by Julia on 21.08.2018
  */
-public class LoginRegisterFilter extends Filter {
+public class LoginRegisterFilter extends EncodingFilter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        if(((HttpServletRequest) request).getSession().getAttribute("access")!=null){
+        if(((HttpServletRequest) request).getSession().getAttribute("user")!=null){
             ((HttpServletResponse) response).sendRedirect("/");
         }else {
             super.doFilter(request, response, chain);

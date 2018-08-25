@@ -6,7 +6,7 @@
     <short-name>userInfo</short-name>
     <uri>/WEB-INF/tlds/user</uri>
     <tag>
-        <name>getinfo</name>
+        <name>getInfo</name>
         <tag-class>tags.UserTag</tag-class>
         <body-content>empty</body-content>
     </tag>

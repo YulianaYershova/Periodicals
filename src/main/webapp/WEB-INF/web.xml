@@ -34,18 +34,18 @@
     </servlet-mapping>
 
     <filter>
-        <filter-name>Filter</filter-name>
-        <filter-class>servlet.Filter</filter-class>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>filters.EncodingFilter</filter-class>
     </filter>
 
     <filter-mapping>
-        <filter-name>Filter</filter-name>
+        <filter-name>EncodingFilter</filter-name>
         <servlet-name>Controller</servlet-name>
     </filter-mapping>
 
     <filter>
         <filter-name>LoginRegisterFilter</filter-name>
-        <filter-class>servlet.LoginRegisterFilter</filter-class>
+        <filter-class>filters.LoginRegisterFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -54,7 +54,7 @@
         <url-pattern>/register</url-pattern>
     </filter-mapping>
 
-    <!-- <error-page>
+ <!--    <error-page>
          <location>/css/images/error.png</location>
      </error-page>-->
     <session-config>

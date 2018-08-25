@@ -14,7 +14,7 @@ import java.sql.*;
  */
 public class UserDAO extends AbstractDAO implements IUser {
 
-    private static final Logger logger = LoggerLoader.getLogger(AbstractDAO.class);
+    private static final Logger logger = LoggerLoader.getLogger(UserDAO.class);
     private static UserDAO userDAO;
     private final String SELECT_ALL_FROM_USER = "SELECT user.id,user.user_role, user_role.role, user.name, " +
             "user.login, user.password " +
@@ -42,7 +42,7 @@ public class UserDAO extends AbstractDAO implements IUser {
         user = findById(SELECT_ALL_FROM_USER + "WHERE user.id= ?", id,
                 set -> set != null ? new User(
                         set.getInt("id"),
-                        new UserRole(set.getInt("role_id"), set.getString("role")),
+                        new UserRole(set.getInt("user_role"), set.getString("role")),
                         set.getString("name"),
                         set.getString("login"),
                         set.getString("password")) : null);
@@ -67,7 +67,8 @@ public class UserDAO extends AbstractDAO implements IUser {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("findUserByLogin ", e);
+
         }
         return user;
     }
@@ -86,7 +87,8 @@ public class UserDAO extends AbstractDAO implements IUser {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("insertUser ", e);
+
         }
         return false;
     }
@@ -104,7 +106,7 @@ public class UserDAO extends AbstractDAO implements IUser {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("updateUser ", e);
         }
         return false;
     }

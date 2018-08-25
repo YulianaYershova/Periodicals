@@ -1,5 +1,7 @@
 package persistence.dao.mySqlDAOImpl;
 
+import logging.LoggerLoader;
+import org.apache.log4j.Logger;
 import persistence.dao.IPayment;
 import persistence.entities.Payment;
 
@@ -10,6 +12,9 @@ import java.util.ArrayList;
  * Created by Julia on 14.08.2018
  */
 public class PaymentDAO extends AbstractDAO implements IPayment {
+
+    private static final Logger logger = LoggerLoader.getLogger(PaymentDAO.class);
+
 
     private static PaymentDAO paymentDAO;
 
@@ -57,7 +62,7 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("getAllPayments error ", e);
         }
         return payments;
     }
@@ -74,7 +79,7 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("insertPayment error ", e);
         }
         return false;
     }
@@ -89,7 +94,7 @@ public class PaymentDAO extends AbstractDAO implements IPayment {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("updatePayment error ", e);
         }
         return false;
     }

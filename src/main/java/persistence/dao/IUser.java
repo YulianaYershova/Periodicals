@@ -1,5 +1,6 @@
 package persistence.dao;
 
+import persistence.entities.Subscription;
 import persistence.entities.User;
 
 /**
@@ -14,6 +15,7 @@ public interface IUser {
      * @return - user or null
      */
     User findUserById(int id);
+
 
     /**
      * User's selection by login

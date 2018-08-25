@@ -17,6 +17,8 @@ public interface ISubscription {
      */
     Subscription findSubscriptionById(int id);
 
+    public ArrayList<Subscription> findSubscriptionsByUser(int id);
+
     /**
      * Selection all subscriptions in the database
      *

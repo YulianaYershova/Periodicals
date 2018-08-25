@@ -13,22 +13,26 @@
 <html>
 <head>
     <title>Main</title>
-    <%--<fmt:setBundle basename="message" scope="session" var="msg"/>--%>
 </head>
 <body>
 
 <fmt:setLocale value="${locale}" />
 <fmt:setBundle basename="message"/>
 
-
-<c:set var="role" scope="session" value="${role}"/>
+<c:set var="user" scope="session" value="${user}"/>
 <c:choose>
-    <c:when test="${role=='admin'}">
+    <c:when test="${user.getUserRole().getRole()=='admin'}">
         <jsp:include page="../views/header.jsp"/>
+        <%--<div style="padding-left:20px; color: #555;">
+            <h4><userInfo:getInfo/></h4>
+        </div>--%>
         <jsp:include page="../views/content.jsp"/>
     </c:when>
-    <c:when test="${role=='reader'}">
+    <c:when test="${user.getUserRole().getRole()=='reader'}">
         <jsp:include page="../views/header.jsp"/>
+        <%--<div style="padding-left:20px; color: #555;">
+            <h4><userInfo:getInfo/></h4>
+        </div>--%>
         <jsp:include page="../views/content.jsp"/>
     </c:when>
     <c:otherwise>

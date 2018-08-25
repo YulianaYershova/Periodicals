@@ -5,30 +5,35 @@
   Time: 15:37
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
-    <title>Login</title>
+    <title>Sign in</title>
+    <fmt:setLocale value="${locale}"/>
+    <fmt:setBundle basename="message"/>
 </head>
 <body>
+
 <jsp:include page="../views/header.jsp"/>
 <form name="loginForm" action="login" method="post">
     <input type="hidden" name="command" value="login">
     <div class="formContainer">
-        <label><b>Login</b></label>
+        <label><b><fmt:message key="login"/> </b></label>
         <input type="text" placeholder="Enter Username" name="login" required>
 
-        <label><b>Password</b></label>
+        <label><b><fmt:message key="password"/></b></label>
         <input type="password" placeholder="Enter Password" name="password" required>
 
         <div class="submitButton">
-            <button type="submit">Login</button>
+            <button type="submit"><fmt:message key="login"/></button>
         </div>
 
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
+        <br/>
         <label style="color: brown">
         ${error}
         </label>

@@ -1,6 +1,8 @@
 package persistence.dao.mySqlDAOImpl;
 
 
+import logging.LoggerLoader;
+import org.apache.log4j.Logger;
 import persistence.dao.IUserRole;
 import persistence.entities.UserRole;
 
@@ -10,6 +12,8 @@ import java.sql.*;
  * Created by Julia on 09.08.2018
  */
 public class UserRoleDAO extends AbstractDAO implements IUserRole {
+    private static final Logger logger = LoggerLoader.getLogger(UserRoleDAO.class);
+
 
     private static UserRoleDAO userRoleDAO;
     private final String SELECT_ALL_FROM_USER_ROLE = "SELECT * FROM user_role ";
@@ -49,7 +53,7 @@ public class UserRoleDAO extends AbstractDAO implements IUserRole {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("findUserRoleByRole ", e);
         }
         return userRole;
     }
@@ -65,7 +69,7 @@ public class UserRoleDAO extends AbstractDAO implements IUserRole {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("insertUserRole ", e);
         }
         return false;
     }
@@ -79,7 +83,7 @@ public class UserRoleDAO extends AbstractDAO implements IUserRole {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("updateUserRole ", e);
         }
         return false;
     }

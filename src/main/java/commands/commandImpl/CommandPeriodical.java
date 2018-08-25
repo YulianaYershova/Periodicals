@@ -1,8 +1,7 @@
-package commands.CommandImpl;
+package commands.commandImpl;
 
 import commands.ICommand;
 import manager.Config;
-import persistence.entities.Periodical;
 import service.PeriodicalService;
 
 import javax.servlet.ServletException;
@@ -15,13 +14,10 @@ import java.io.IOException;
  */
 public class CommandPeriodical implements ICommand {
     PeriodicalService periodicalService = new PeriodicalService();
-
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = (String)request.getParameter("id");
-        int Pid = Integer.valueOf(id);
-        Periodical periodical = periodicalService.getPeriodical(Pid);
-        request.getSession().setAttribute("periodical", periodical);
+        String id = request.getParameter("id");
+        request.getSession().setAttribute("periodical", periodicalService.getPeriodical(Integer.valueOf(id)));
         return Config.getInstance().getProperty(Config.PERIODICAL);
     }
 }

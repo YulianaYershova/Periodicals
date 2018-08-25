@@ -1,7 +1,7 @@
 package servlet;
 
 
-import commands.CommandImpl.*;
+import commands.commandImpl.*;
 import commands.ICommand;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,13 +15,15 @@ public class ControllerHelper {
     private HashMap<String, ICommand> commands = new HashMap<>();
 
     private ControllerHelper() {
-        commands.put("home", new CommandHomePage());
+        /* commands.put("home", new CommandHomePage());*/
         commands.put("register", new CommandRegistration());
         commands.put("login", new CommandLogin());
         commands.put("missing", new CommandMissing());
         commands.put("locale", new CommandLocale());
         commands.put("logout", new CommandLogout());
         commands.put("periodical", new CommandPeriodical());
+        commands.put("subscribe", new CommandSubscription());
+        commands.put("userPeriodicals", new CommandUserPeriodicals());
     }
 
     public static ControllerHelper getInstance() {

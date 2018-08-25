@@ -27,6 +27,13 @@ public class Subscription implements Serializable {
         this.expiration_date = expiration_date;
     }
 
+    public Subscription(User user, Periodical periodical, Payment payment, Timestamp expiration_date) {
+        this.user = user;
+        this.periodical = periodical;
+        this.payment = payment;
+        this.expiration_date = expiration_date;
+    }
+
     public int getId() {
         return id;
     }

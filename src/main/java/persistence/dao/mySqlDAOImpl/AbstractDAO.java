@@ -1,6 +1,8 @@
 package persistence.dao.mySqlDAOImpl;
 
 
+import logging.LoggerLoader;
+import org.apache.log4j.Logger;
 import persistence.dao.DataSource;
 import persistence.dao.Mapper;
 
@@ -10,6 +12,7 @@ import java.sql.*;
  * Created by Julia on 09.08.2018
  */
 public abstract class AbstractDAO {
+    private static final Logger logger = LoggerLoader.getLogger(AbstractDAO.class);
 
     protected DataSource dataSource = DataSource.getInstance();
 
@@ -23,7 +26,7 @@ public abstract class AbstractDAO {
                 return mapper.map(resultSet);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("findById ", e);
         }
         return null;
     }
@@ -33,7 +36,8 @@ public abstract class AbstractDAO {
              Statement statement = connection.createStatement()) {
             return statement.executeUpdate(query);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("execute ", e);
+
         }
         return 0;
     }
@@ -44,7 +48,8 @@ public abstract class AbstractDAO {
                 return resultSet.getInt(1);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("getGeneratedKey ", e);
+
         }
         throw new SQLException("Key is not generated");
     }

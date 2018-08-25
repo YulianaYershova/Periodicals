@@ -13,19 +13,14 @@
 <html>
 <head>
     <link rel="stylesheet" href="../../css/style.css">
-    <%-- <fmt:setBundle basename="message" var="msg"/>--%>
+    <fmt:setLocale value="${locale}"/>
+    <fmt:setBundle basename="message"/>
 </head>
 <body>
 
-<fmt:setLocale value="${locale}"/>
-<fmt:setBundle basename="message"/>
 
 <div class="head">
-    <h6> Ut enim ad minim veniam 1962 </h6>
-    <%--<h1> <fmt:message key="periodicals" bundle="${msg}"/></h1>--%>
     <h1><fmt:message key="periodicals"/></h1>
-
-    <div class="title">All periodicals</div>
 </div>
 <catalog:getCatalog/>
 <div class="container">
@@ -39,7 +34,7 @@
                     <p>Category: ${item.getPeriodicalCategory().getCategory()}</p>
                     <p>Price: ${item.getPrice()}</p>
                     <p>Period: ${item.getPeriod()}</p>
-                    <p style="color: chocolate"> Details</p></a>
+                    <p style="color: chocolate; font-style: italic"> Details</p></a>
             </li>
         </c:forEach>
     </ul>

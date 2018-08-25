@@ -1,5 +1,9 @@
 package persistence.dao;
 
+import logging.LoggerLoader;
+import org.apache.log4j.Logger;
+import persistence.dao.mySqlDAOImpl.UserRoleDAO;
+
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.sql.Connection;
@@ -9,6 +13,8 @@ import java.sql.SQLException;
  * Created by Julia on 16.08.2018
  */
 public class DataSource {
+    private static final Logger logger = LoggerLoader.getLogger(DataSource.class);
+
 
     private static DataSource dataSource;
 
@@ -28,7 +34,8 @@ public class DataSource {
             InitialContext initialContext = new InitialContext();
             dataSource = (javax.sql.DataSource) initialContext.lookup("java:/comp/env/jdbc/periodicals");
         } catch (NamingException e) {
-            e.printStackTrace();
+            logger.error("getConnection ", e);
+
         }
         return dataSource.getConnection();
     }

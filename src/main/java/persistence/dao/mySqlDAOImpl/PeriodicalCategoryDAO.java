@@ -1,5 +1,7 @@
 package persistence.dao.mySqlDAOImpl;
 
+import logging.LoggerLoader;
+import org.apache.log4j.Logger;
 import persistence.dao.IPeriodicalCategory;
 import persistence.entities.PeriodicalCategory;
 
@@ -10,6 +12,7 @@ import java.util.ArrayList;
  * Created by Julia on 09.08.2018
  */
 public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCategory {
+    private static final Logger logger = LoggerLoader.getLogger(PeriodicalCategoryDAO.class);
 
     private static PeriodicalCategoryDAO periodicalCategoryDAO;
 
@@ -55,7 +58,7 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("getAllCategories ", e);
         }
         return categories;
     }
@@ -71,7 +74,7 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("insertCategory ", e);
         }
         return false;
     }
@@ -85,7 +88,7 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("updateCategory ", e);
         }
         return false;
     }

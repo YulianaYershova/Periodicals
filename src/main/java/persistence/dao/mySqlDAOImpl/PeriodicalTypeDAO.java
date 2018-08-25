@@ -1,5 +1,7 @@
 package persistence.dao.mySqlDAOImpl;
 
+import logging.LoggerLoader;
+import org.apache.log4j.Logger;
 import persistence.dao.IPeriodicalType;
 import persistence.entities.PeriodicalType;
 
@@ -12,6 +14,8 @@ import java.sql.Statement;
  * Created by Julia on 13.08.2018
  */
 public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
+    private static final Logger logger = LoggerLoader.getLogger(PeriodicalTypeDAO.class);
+
 
     private static PeriodicalTypeDAO periodicalTypeDAO;
     private final String SELECT_ALL_FROM_PERIODICAL_TYPE = "SELECT * FROM periodical_type ";
@@ -53,7 +57,7 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("insertType ", e);
         }
         return false;
     }
@@ -67,7 +71,8 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("updateType ", e);
+
         }
         return false;
     }

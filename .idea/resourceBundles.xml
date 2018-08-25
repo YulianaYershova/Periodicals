@@ -4,7 +4,6 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/message.properties" />
     <file url="file://$PROJECT_DIR$/src/main/resources/message_en.properties" />
     <file url="file://$PROJECT_DIR$/src/main/resources/message_ru.properties" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/message_ua.properties" />
     <custom-resource-bundle>
       <file value="file://$PROJECT_DIR$/src/main/resources/message.properties" />
       <file value="file://$PROJECT_DIR$/src/main/resources/message_en.properties" />

@@ -1,6 +1,8 @@
 package tags;
 
 
+import persistence.entities.User;
+
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
@@ -12,9 +14,9 @@ import java.io.IOException;
 public class UserTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
-        String userName = (String) pageContext.getSession().getAttribute("user");
-        if (userName != null) {
-            String login = "Hello, " + userName + "!";
+        User user = (User) pageContext.getSession().getAttribute("user");
+        if (user != null) {
+            String login = "Hello, " + user.getName() + "!";
             JspWriter out = pageContext.getOut();
             try {
                 out.write(login);

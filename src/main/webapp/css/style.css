@@ -55,10 +55,10 @@ Header style
     color: black;
 }
 
-.header a.active {
+/*.header a.active {
     background-color: dodgerblue;
     color: white;
-}
+}*/
 
 .header-right {
     float: right;
@@ -166,17 +166,6 @@ Container style
 
 }
 
-.periodical ul li {
-    list-style: none;
-    float: left;
-    font: 10px/1.5 Verdana, Helvetica, Sans-serif;
-    width: 200px;
-    margin: 2% 2% 1px 3%;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-
-}
 
 
 .container ul li p {
