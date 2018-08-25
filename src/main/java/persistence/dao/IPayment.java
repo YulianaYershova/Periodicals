@@ -22,7 +22,7 @@ public interface IPayment {
      *
      * @return - list of payments
      */
-    ArrayList<Payment> getAllPayments();
+    ArrayList<Payment> findAllPayments();
 
     /**
      * Insert new payment

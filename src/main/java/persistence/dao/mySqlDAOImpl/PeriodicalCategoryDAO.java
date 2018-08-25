@@ -17,7 +17,9 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
     private static PeriodicalCategoryDAO periodicalCategoryDAO;
 
     private final String SELECT_ALL_FROM_PERIODICAL_CATEGORY = "SELECT * FROM periodical_category ";
+
     private final String INSERT_CATEGORY = "INSERT INTO periodical_category (category) VALUES (?)";
+
     private final String UPDATE_CATEGORY = "UPDATE periodical_category SET periodical_category.category = ? " +
             "WHERE periodical_category.id = ?";
 
@@ -36,10 +38,14 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
     public PeriodicalCategory findCategoryById(int id) {
         PeriodicalCategory category = null;
 
-        category = findById(SELECT_ALL_FROM_PERIODICAL_CATEGORY + "WHERE periodical_category.id= ?", id,
-                set -> set != null ? new PeriodicalCategory(
-                        set.getInt("id"),
-                        set.getString("category")) : null);
+        try {
+            category = findById(SELECT_ALL_FROM_PERIODICAL_CATEGORY + "WHERE periodical_category.id= ?", id,
+                    set -> set != null ? new PeriodicalCategory(
+                            set.getInt("id"),
+                            set.getString("category")) : null);
+        } catch (SQLException e) {
+            logger.error("Failed to find category by id", e);
+        }
 
         return category;
     }
@@ -58,7 +64,7 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
                 }
             }
         } catch (SQLException e) {
-            logger.error("getAllCategories ", e);
+            logger.error("Failed to get all categories", e);
         }
         return categories;
     }
@@ -74,7 +80,7 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
             }
 
         } catch (SQLException e) {
-            logger.error("insertCategory ", e);
+            logger.error("Failed to insert category", e);
         }
         return false;
     }
@@ -88,7 +94,7 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
                 return true;
             }
         } catch (SQLException e) {
-            logger.error("updateCategory ", e);
+            logger.error("Failed to update category", e);
         }
         return false;
     }
@@ -96,8 +102,12 @@ public class PeriodicalCategoryDAO extends AbstractDAO implements IPeriodicalCat
     @Override
     public boolean deleteCategory(PeriodicalCategory category) {
         String query = "DELETE FROM periodical_category WHERE periodical_category.id = " + category.getId();
-        if (execute(query) != 0) {
-            return true;
+        try {
+            if (execute(query) != 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to delete category", e);
         }
         return false;
     }

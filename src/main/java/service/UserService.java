@@ -27,7 +27,7 @@ public class UserService {
     }
 
     public UserRole getUserRole(String role) {
-        return iUserRole.findUserRoleByRole(role);
+        return iUserRole.findRoleByRole(role);
     }
 
     public User getUserByLogin(String login) {

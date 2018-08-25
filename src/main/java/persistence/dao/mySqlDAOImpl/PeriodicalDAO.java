@@ -14,8 +14,8 @@ import java.util.ArrayList;
  * Created by Julia on 09.08.2018
  */
 public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
-    private static final Logger logger = LoggerLoader.getLogger(PeriodicalDAO.class);
 
+    private static final Logger logger = LoggerLoader.getLogger(PeriodicalDAO.class);
 
     private static PeriodicalDAO periodicalDAO;
 
@@ -47,15 +47,19 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
     @Override
     public Periodical findPeriodicalById(int id) {
         Periodical periodical = null;
-        periodical = findById(SELECT_ALL_FROM_PERIODICAL + "WHERE periodical.id = ?;", id,
-                set -> set != null ? new Periodical(
-                        set.getInt("id"),
-                        set.getString("title"),
-                        new PeriodicalType(set.getInt("periodical_type"), set.getString("type")),
-                        new PeriodicalCategory(set.getInt("periodical_category"), set.getString("category")),
-                        set.getString("period"),
-                        set.getBigDecimal("price"),
-                        set.getString("description")) : null);
+        try {
+            periodical = findById(SELECT_ALL_FROM_PERIODICAL + "WHERE periodical.id = ?;", id,
+                    set -> set != null ? new Periodical(
+                            set.getInt("id"),
+                            set.getString("title"),
+                            new PeriodicalType(set.getInt("periodical_type"), set.getString("type")),
+                            new PeriodicalCategory(set.getInt("periodical_category"), set.getString("category")),
+                            set.getString("period"),
+                            set.getBigDecimal("price"),
+                            set.getString("description")) : null);
+        } catch (SQLException e) {
+            logger.error("Failed to find periodical by id", e);
+        }
         return periodical;
     }
 
@@ -77,7 +81,7 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
                 }
             }
         } catch (SQLException e) {
-            logger.error("findAllPeriodicals ", e);
+            logger.error("Failed to find all periodicals ", e);
         }
         return periodicals;
     }
@@ -99,7 +103,7 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
             }
 
         } catch (SQLException e) {
-            logger.error("insertPeriodical ", e);
+            logger.error("Failed to insert periodical ", e);
 
         }
         return false;
@@ -119,7 +123,7 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
                 return true;
             }
         } catch (SQLException e) {
-            logger.error("updatePeriodical ", e);
+            logger.error("Failed to update periodical ", e);
         }
         return false;
     }
@@ -127,8 +131,12 @@ public class PeriodicalDAO extends AbstractDAO implements IPeriodical {
     @Override
     public boolean deletePeriodical(Periodical periodical) {
         String query = "DELETE FROM periodical WHERE periodical.id = " + periodical.getId();
-        if (execute(query) != 0) {
-            return true;
+        try {
+            if (execute(query) != 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to delete periodical", e);
         }
         return false;
     }

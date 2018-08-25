@@ -13,7 +13,7 @@ public interface IUserRole {
      * @param id - userRole id
      * @return - userRole or null
      */
-    UserRole findUserRoleById(int id);
+    UserRole findRoleById(int id);
 
     /**
      * Role's selection by role
@@ -21,7 +21,7 @@ public interface IUserRole {
      * @param role - userRole's role
      * @return - UserRole or null
      */
-    UserRole findUserRoleByRole(String role);
+    UserRole findRoleByRole(String role);
 
     /**
      * Insert new role
@@ -29,7 +29,7 @@ public interface IUserRole {
      * @param role - role to be inserted to the database
      * @return - {@code true} if new role id added, {@code false} if no records is inserted
      */
-    boolean insertUserRole(UserRole role);
+    boolean insertRole(UserRole role);
 
     /**
      * Update role info
@@ -37,7 +37,7 @@ public interface IUserRole {
      * @param role - role info to be updated in the database
      * @return - {@code true} if role info is updated, {@code false} if no records is updated
      */
-    boolean updateUserRole(UserRole role);
+    boolean updateRole(UserRole role);
 
     /**
      * Delete role
@@ -45,6 +45,6 @@ public interface IUserRole {
      * @param role - role to be deleted from the database
      * @return - {@code true} if role is deleted, {@code false} if no records is deleted
      */
-    boolean deleteUserRole(UserRole role);
+    boolean deleteRole(UserRole role);
 
 }

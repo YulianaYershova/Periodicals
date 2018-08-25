@@ -14,12 +14,13 @@ import java.util.ArrayList;
  * Created by Julia on 09.08.2018
  */
 public class SubscriptionDAO extends AbstractDAO implements ISubscription {
-    private static final Logger logger = LoggerLoader.getLogger(SubscriptionDAO.class);
 
+    private static final Logger logger = LoggerLoader.getLogger(SubscriptionDAO.class);
 
     DAOFactory daoFactory = new MySqlDAOFactory();
 
     private static SubscriptionDAO subscriptionDAO;
+
     private final String SELECT_ALL_FROM_SUBSCRIPTION = "SELECT * FROM subscription ";
 
     /*private final String INSERT_SUBSCRIPTION = "INSERT INTO subscription (user_id, periodical_id, payment_id, expiration_date) " +
@@ -45,14 +46,18 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
 
     @Override
     public Subscription findSubscriptionById(int id) {
-        Subscription subscription = null;
-        subscription = findById(SELECT_ALL_FROM_SUBSCRIPTION + "WHERE subscription.id = ?", id,
-                set -> set != null ? new Subscription(
-                        set.getInt("id"),
-                        daoFactory.getUserDAO().findUserById(set.getInt("user_id")),
-                        daoFactory.getPeriodicalDAO().findPeriodicalById(set.getInt("periodical_id")),
-                        daoFactory.getPaymentDAO().findPaymentById(set.getInt("payment_id")),
-                        set.getTimestamp("expiration_date")) : null);
+        Subscription subscription=null;
+        try {
+            subscription = findById(SELECT_ALL_FROM_SUBSCRIPTION + "WHERE subscription.id = ?", id,
+                    set -> set != null ? new Subscription(
+                            set.getInt("id"),
+                            daoFactory.getUserDAO().findUserById(set.getInt("user_id")),
+                            daoFactory.getPeriodicalDAO().findPeriodicalById(set.getInt("periodical_id")),
+                            daoFactory.getPaymentDAO().findPaymentById(set.getInt("payment_id")),
+                            set.getTimestamp("expiration_date")) : null);
+        } catch (SQLException e) {
+            logger.error("Failed to find subscription by id", e);
+        }
         return subscription;
     }
 
@@ -72,7 +77,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
                 }
             }
         } catch (SQLException e) {
-            logger.error("findSubscriptionsByUser ", e);
+            logger.error("Failed to find subscriptions by user", e);
 
         }
         return subscriptions;
@@ -94,7 +99,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
                 }
             }
         } catch (SQLException e) {
-            logger.error("getAllSubscription ", e);
+            logger.error("Failed to get all subscription", e);
         }
         return subscriptions;
     }
@@ -114,7 +119,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
             }
 
         } catch (SQLException e) {
-            logger.error("insertSubscription ", e);
+            logger.error("Failed to insert subscription", e);
         }
         return false;
     }
@@ -131,7 +136,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
                 return true;
             }
         } catch (SQLException e) {
-            logger.error("updateSubscription ", e);
+            logger.error("Failed to update subscription", e);
         }
         return false;
     }
@@ -139,8 +144,12 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
     @Override
     public boolean deleteSubscription(Subscription subscription) {
         String query = "DELETE FROM subscription WHERE subscription.id = " + subscription.getId();
-        if (execute(query) != 0) {
-            return true;
+        try {
+            if (execute(query) != 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to delete subscription", e);
         }
         return false;
     }

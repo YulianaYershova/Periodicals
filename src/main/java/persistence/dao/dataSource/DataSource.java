@@ -1,8 +1,7 @@
-package persistence.dao;
+package persistence.dao.dataSource;
 
 import logging.LoggerLoader;
 import org.apache.log4j.Logger;
-import persistence.dao.mySqlDAOImpl.UserRoleDAO;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;

@@ -36,6 +36,4 @@ public class CommandLogin implements ICommand {
         return Config.getInstance().getProperty(Config.LOGIN);
 
     }
-
-
 }

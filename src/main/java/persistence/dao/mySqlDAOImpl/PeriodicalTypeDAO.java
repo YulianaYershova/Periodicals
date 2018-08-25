@@ -14,12 +14,15 @@ import java.sql.Statement;
  * Created by Julia on 13.08.2018
  */
 public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
+
     private static final Logger logger = LoggerLoader.getLogger(PeriodicalTypeDAO.class);
 
-
     private static PeriodicalTypeDAO periodicalTypeDAO;
+
     private final String SELECT_ALL_FROM_PERIODICAL_TYPE = "SELECT * FROM periodical_type ";
+
     private final String INSERT_TYPE = "INSERT INTO periodical_type (type) VALUES (?)";
+
     private final String UPDATE_TYPE = "UPDATE periodical_type SET periodical_type.type = ? WHERE periodical_type.id = ?";
 
     private PeriodicalTypeDAO() {
@@ -36,13 +39,16 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
 
     @Override
     public PeriodicalType findTypeById(int id) {
-        PeriodicalType type = null;
+        PeriodicalType type=null;
 
-        type = findById(SELECT_ALL_FROM_PERIODICAL_TYPE+"WHERE periodical_type.id= ?", id,
-                set -> set != null ? new PeriodicalType(
-                        set.getInt("id"),
-                        set.getString("type")) : null);
-
+        try {
+            type = findById(SELECT_ALL_FROM_PERIODICAL_TYPE+"WHERE periodical_type.id= ?", id,
+                    set -> set != null ? new PeriodicalType(
+                            set.getInt("id"),
+                            set.getString("type")) : null);
+        } catch (SQLException e) {
+            logger.error("Failed to find type by id", e);
+        }
         return type;
     }
 
@@ -57,7 +63,7 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
             }
 
         } catch (SQLException e) {
-            logger.error("insertType ", e);
+            logger.error("Failed to insert type ", e);
         }
         return false;
     }
@@ -71,7 +77,7 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
                 return true;
             }
         } catch (SQLException e) {
-            logger.error("updateType ", e);
+            logger.error("Failed to update type ", e);
 
         }
         return false;
@@ -80,8 +86,12 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
     @Override
     public boolean deleteType(PeriodicalType type) {
         String query = "DELETE FROM periodical_type WHERE periodical_type.id = " + type.getId();
-        if (execute(query) != 0) {
-            return true;
+        try {
+            if (execute(query) != 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to delete type", e);
         }
         return false;
     }

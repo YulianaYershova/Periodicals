@@ -29,8 +29,6 @@
         <url-pattern>/logout</url-pattern>
         <url-pattern>/periodical</url-pattern>
         <url-pattern>/subscribe</url-pattern>
-
-
     </servlet-mapping>
 
     <filter>
@@ -44,6 +42,17 @@
     </filter-mapping>
 
     <filter>
+        <filter-name>CacheFilter</filter-name>
+        <filter-class>filters.CacheFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CacheFilter</filter-name>
+        <url-pattern>/login</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
         <filter-name>LoginRegisterFilter</filter-name>
         <filter-class>filters.LoginRegisterFilter</filter-class>
     </filter>
@@ -54,9 +63,9 @@
         <url-pattern>/register</url-pattern>
     </filter-mapping>
 
- <!--    <error-page>
-         <location>/css/images/error.png</location>
-     </error-page>-->
+        <error-page>
+            <location>/css/images/error.png</location>
+        </error-page>
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
