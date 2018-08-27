@@ -1,7 +1,6 @@
 package service;
 
 import persistence.dao.ISubscription;
-import persistence.dao.IUser;
 import persistence.dao.daoFactory.DAOFactory;
 import persistence.entities.Periodical;
 import persistence.entities.Subscription;
@@ -15,7 +14,6 @@ import java.util.ArrayList;
  */
 public class SubscriptionService {
     private ISubscription iSubscription = DAOFactory.getMySqlDAOFactory().getSubscriptionDAO();
-    private IUser iUser = DAOFactory.getMySqlDAOFactory().getUserDAO();
 
     public boolean subscribe(User user, Periodical periodical) {
         Subscription subscription = new Subscription(user, periodical, null, new Timestamp(System.currentTimeMillis()));

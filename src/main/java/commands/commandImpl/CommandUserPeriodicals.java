@@ -19,7 +19,7 @@ public class CommandUserPeriodicals implements ICommand {
     private SubscriptionService subscriptionService = new SubscriptionService();
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response){
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
             return Config.getInstance().getProperty(Config.LOGIN);

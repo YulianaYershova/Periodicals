@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class CommandLogout implements ICommand {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         request.getSession().invalidate();
         return Config.getInstance().getProperty(Config.HOME);
     }

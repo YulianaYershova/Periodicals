@@ -9,5 +9,5 @@ import java.io.IOException;
  * Created by Julia on 15.08.2018
  */
 public interface ICommand {
-    String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    String execute(HttpServletRequest request, HttpServletResponse response) ;
 }

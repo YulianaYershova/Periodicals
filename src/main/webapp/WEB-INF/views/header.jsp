@@ -26,11 +26,11 @@
             <a href="register"><fmt:message key="registration"/> </a>
         </c:if>
         <c:if test="${not empty user}">
-            <%-- <a>
-                 <form name="logoutForm" action="logout" method="get">
-                     <input type="submit" name="command" value="logout">
-                 </form>
-             </a>--%>
+            <%--    <a>
+                    <form name="logoutForm" action="logout" method="get">
+                        <input type="submit" name="command" value="logout">
+                    </form>
+                </a>--%>
             <a href="Controller?command=logout"><fmt:message key="sign_out"/> </a>
             <a href="Controller?command=userPeriodicals">My periodicals</a>
         </c:if>

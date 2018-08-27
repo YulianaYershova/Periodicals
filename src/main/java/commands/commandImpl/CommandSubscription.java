@@ -18,7 +18,7 @@ public class CommandSubscription implements ICommand {
     SubscriptionService subscriptionService = new SubscriptionService();
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         if (request.getSession().getAttribute("user") == null) {
             return Config.getInstance().getProperty(Config.LOGIN);
         } else {

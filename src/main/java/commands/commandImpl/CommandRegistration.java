@@ -23,7 +23,7 @@ public class CommandRegistration implements ICommand {
     UserService userService = new UserService();
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         String page;
         String name = request.getParameter(NAME);
         String login = request.getParameter(LOGIN);

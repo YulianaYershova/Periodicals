@@ -14,7 +14,7 @@ import java.io.IOException;
 public class CommandLocale implements ICommand {
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         request.getSession().setAttribute("locale" , request.getParameter("locale"));
         return Config.getInstance().getProperty(Config.HOME);

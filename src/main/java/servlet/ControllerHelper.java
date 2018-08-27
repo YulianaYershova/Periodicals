@@ -15,7 +15,6 @@ public class ControllerHelper {
     private HashMap<String, ICommand> commands = new HashMap<>();
 
     private ControllerHelper() {
-        /* commands.put("home", new CommandHomePage());*/
         commands.put("register", new CommandRegistration());
         commands.put("login", new CommandLogin());
         commands.put("missing", new CommandMissing());

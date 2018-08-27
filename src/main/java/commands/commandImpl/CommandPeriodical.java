@@ -15,7 +15,7 @@ import java.io.IOException;
 public class CommandPeriodical implements ICommand {
     PeriodicalService periodicalService = new PeriodicalService();
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");
         request.getSession().setAttribute("periodical", periodicalService.getPeriodical(Integer.valueOf(id)));
         return Config.getInstance().getProperty(Config.PERIODICAL);
