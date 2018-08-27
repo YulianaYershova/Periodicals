@@ -18,7 +18,7 @@ public abstract class DAOFactory {
 
     public abstract IPeriodical getPeriodicalDAO();
 
-    public abstract IPeriodicalCategory getPeriodicalCategoryDAO();
+    public abstract IPeriodicalPeriod getPeriodicalPeriodDAO();
 
     public abstract IPeriodicalType getPeriodicalTypeDAO();
 

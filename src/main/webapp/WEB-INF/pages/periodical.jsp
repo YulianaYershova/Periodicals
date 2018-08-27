@@ -5,6 +5,7 @@
   Time: 22:08
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
@@ -25,13 +26,20 @@
             <div class="type"><c:out value="${item.getPeriodicalType().getType()}"/></div>
             <div class="mainHeader">${item.getTitle()}</div>
             <img src="../../css/images/book.jpg" alt="image">
-            <p>Category: ${item.getPeriodicalCategory().getCategory()}</p>
+            <p>Category: ${item.getCategory()}</p>
             <p>Price: ${item.getPrice()}</p>
-            <p>Period: ${item.getPeriod()}</p>
+            <p>Period: ${item.getPeriodicalPeriod().getPeriod()}</p>
             <p>
-               <%-- <span class="dropcaps">D</span>--%>
+                <%-- <span class="dropcaps">D</span>--%>
                 <span class="red">Description:</span> ${item.getDescription()}
             </p>
+            <select>
+                <option value="1">1 Month</option>
+                <option value="3">3 Month</option>
+                <option value="6">6 Month</option>
+                <option value="12">Year</option>
+            </select>
+
             <form name="subscribeForm" action="subscribe" method="post">
                 <input type="hidden" name="command" value="subscribe" required>
                 <div class="submitButton">

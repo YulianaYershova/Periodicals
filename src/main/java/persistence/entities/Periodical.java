@@ -13,21 +13,31 @@ public class Periodical implements Serializable {
     private int id;
     private String title;
     private PeriodicalType periodicalType;
-    private PeriodicalCategory periodicalCategory;
-    private String period;
+    private PeriodicalPeriod periodicalPeriod;
+    private String category;
     private BigDecimal price;
     private String description;
 
     public Periodical() {
     }
 
-    public Periodical(int id, String title, PeriodicalType periodicalType, PeriodicalCategory periodicalCategory,
-                      String period, BigDecimal price, String description) {
+    public Periodical(int id, String title, PeriodicalType periodicalType, PeriodicalPeriod periodicalPeriod,
+                      String category, BigDecimal price, String description) {
         this.id = id;
         this.title = title;
         this.periodicalType = periodicalType;
-        this.periodicalCategory = periodicalCategory;
-        this.period = period;
+        this.periodicalPeriod = periodicalPeriod;
+        this.category = category;
+        this.price = price;
+        this.description = description;
+    }
+
+    public Periodical(String title, PeriodicalType periodicalType, PeriodicalPeriod periodicalPeriod,
+                      String category, BigDecimal price, String description) {
+        this.title = title;
+        this.periodicalType = periodicalType;
+        this.periodicalPeriod = periodicalPeriod;
+        this.category = category;
         this.price = price;
         this.description = description;
     }
@@ -44,12 +54,12 @@ public class Periodical implements Serializable {
         return periodicalType;
     }
 
-    public PeriodicalCategory getPeriodicalCategory() {
-        return periodicalCategory;
+    public PeriodicalPeriod getPeriodicalPeriod() {
+        return periodicalPeriod;
     }
 
-    public String getPeriod() {
-        return period;
+    public String getCategory() {
+        return category;
     }
 
     public BigDecimal getPrice() {
@@ -72,12 +82,12 @@ public class Periodical implements Serializable {
         this.periodicalType = periodicalType;
     }
 
-    public void setPeriodicalCategory(PeriodicalCategory periodicalCategory) {
-        this.periodicalCategory = periodicalCategory;
+    public void setPeriodicalPeriod(PeriodicalPeriod periodicalPeriod) {
+        this.periodicalPeriod = periodicalPeriod;
     }
 
-    public void setPeriod(String period) {
-        this.period = period;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setPrice(BigDecimal price) {
@@ -96,15 +106,15 @@ public class Periodical implements Serializable {
         return id == that.id &&
                 Objects.equals(title, that.title) &&
                 Objects.equals(periodicalType, that.periodicalType) &&
-                Objects.equals(periodicalCategory, that.periodicalCategory) &&
-                Objects.equals(period, that.period) &&
+                Objects.equals(periodicalPeriod, that.periodicalPeriod) &&
+                Objects.equals(category, that.category) &&
                 Objects.equals(price, that.price) &&
                 Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, periodicalType, periodicalCategory, period, price, description);
+        return Objects.hash(id, title, periodicalType, periodicalPeriod, category, price, description);
     }
 
     @Override
@@ -113,8 +123,8 @@ public class Periodical implements Serializable {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", periodicalType=" + periodicalType +
-                ", periodicalCategory=" + periodicalCategory +
-                ", period='" + period + '\'' +
+                ", periodicalPeriod=" + periodicalPeriod +
+                ", category='" + category + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
                 '}';

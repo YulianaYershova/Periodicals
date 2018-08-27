@@ -5,6 +5,7 @@
   Time: 17:30
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/tlds/catalog" prefix="catalog" %>
@@ -31,9 +32,9 @@
                     <div class="type"><c:out value="${item.getPeriodicalType().getType()}"/></div>
                     <div class="mainHeader">${item.getTitle()}</div>
                     <img src="../../css/images/book.jpg" alt="image">
-                    <p>Category: ${item.getPeriodicalCategory().getCategory()}</p>
+                    <p>Category: ${item.getCategory()}</p>
                     <p>Price: ${item.getPrice()}</p>
-                    <p>Period: ${item.getPeriod()}</p>
+                    <p>Period: ${item.getPeriodicalPeriod().getPeriod()}</p>
                     <p style="color: chocolate; font-style: italic"> Details</p></a>
             </li>
         </c:forEach>

@@ -2,6 +2,7 @@ package persistence.dao.daoFactory;
 
 import persistence.dao.*;
 import persistence.dao.mySqlDAOImpl.*;
+import persistence.entities.PeriodicalPeriod;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -25,8 +26,8 @@ public class MySqlDAOFactory extends DAOFactory {
     }
 
     @Override
-    public IPeriodicalCategory getPeriodicalCategoryDAO() {
-        return PeriodicalCategoryDAO.getInstance();
+    public IPeriodicalPeriod getPeriodicalPeriodDAO() {
+        return PeriodicalPeriodDAO.getInstance();
     }
 
     @Override
