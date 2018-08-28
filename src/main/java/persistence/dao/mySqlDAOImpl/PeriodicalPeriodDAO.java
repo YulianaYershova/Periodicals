@@ -4,6 +4,7 @@ import logging.LoggerLoader;
 import org.apache.log4j.Logger;
 import persistence.dao.IPeriodicalPeriod;
 import persistence.entities.PeriodicalPeriod;
+import persistence.entities.PeriodicalType;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -49,6 +50,24 @@ public class PeriodicalPeriodDAO extends AbstractDAO implements IPeriodicalPerio
         }
 
         return period;
+    }
+
+    @Override
+    public PeriodicalPeriod findPeriodByPeriodicalPeriod(String type) {
+        PeriodicalPeriod periodicalPeriod = null;
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SELECT_ALL_FROM_PERIODICAL_PERIOD + "WHERE periodical_period.period= ?")) {
+            statement.setString(1, type);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    periodicalPeriod = new PeriodicalPeriod(resultSet.getInt("id"),
+                            resultSet.getString("period"));
+                }
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to find period by periodical_period", e);
+        }
+        return periodicalPeriod;
     }
 
     @Override

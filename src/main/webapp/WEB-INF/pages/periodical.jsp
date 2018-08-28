@@ -17,8 +17,8 @@
     <fmt:setBundle basename="message"/>
 </head>
 <body>
-
-<jsp:include page="../views/header.jsp"/>
+<c:set var="role" scope="session" value="${role}"/>
+<jsp:include page="header.jsp"/>
 <div class="container">
     <ul>
         <li>
@@ -30,23 +30,34 @@
             <p>Price: ${item.getPrice()}</p>
             <p>Period: ${item.getPeriodicalPeriod().getPeriod()}</p>
             <p>
-                <%-- <span class="dropcaps">D</span>--%>
                 <span class="red">Description:</span> ${item.getDescription()}
             </p>
-            <select>
-                <option value="1">1 Month</option>
-                <option value="3">3 Month</option>
-                <option value="6">6 Month</option>
-                <option value="12">Year</option>
-            </select>
+            <c:choose>
+                <c:when test="${role=='admin'}">
+                    <form name="updateForm" action="updatePeriodical" method="post">
+                        <input type="hidden" name="command" value="updatePeriodical" required>
+                        <div class="submitButton">
+                            <button type="submit">Update periodical</button>
+                        </div>
 
-            <form name="subscribeForm" action="subscribe" method="post">
-                <input type="hidden" name="command" value="subscribe" required>
-                <div class="submitButton">
-                    <button type="submit">Subscribe</button>
-                </div>
-
-            </form>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <form name="subscribeForm" action="subscribe" method="post">
+                        <select name="period">
+                            <option disabled>Select period</option>
+                            <option value="month">month</option>
+                            <option value="threeMonth">threeMonth</option>
+                            <option value="sixMonth">sixMonth</option>
+                            <option value="year">year</option>
+                        </select>
+                        <input type="hidden" name="command" value="subscribe" required>
+                        <div class="submitButton">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </c:otherwise>
+            </c:choose>
         </li>
     </ul>
 </div>

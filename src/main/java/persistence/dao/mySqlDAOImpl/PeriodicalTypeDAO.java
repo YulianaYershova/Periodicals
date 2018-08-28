@@ -4,11 +4,10 @@ import logging.LoggerLoader;
 import org.apache.log4j.Logger;
 import persistence.dao.IPeriodicalType;
 import persistence.entities.PeriodicalType;
+import persistence.entities.User;
+import persistence.entities.UserRole;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Created by Julia on 13.08.2018
@@ -36,13 +35,12 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
     }
 
 
-
     @Override
     public PeriodicalType findTypeById(int id) {
-        PeriodicalType type=null;
+        PeriodicalType type = null;
 
         try {
-            type = findById(SELECT_ALL_FROM_PERIODICAL_TYPE+"WHERE periodical_type.id= ?", id,
+            type = findById(SELECT_ALL_FROM_PERIODICAL_TYPE + "WHERE periodical_type.id= ?", id,
                     set -> set != null ? new PeriodicalType(
                             set.getInt("id"),
                             set.getString("type")) : null);
@@ -50,6 +48,24 @@ public class PeriodicalTypeDAO extends AbstractDAO implements IPeriodicalType {
             logger.error("Failed to find type by id", e);
         }
         return type;
+    }
+
+    @Override
+    public PeriodicalType findTypeByPeriodicalType(String type) {
+        PeriodicalType periodicalType = null;
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SELECT_ALL_FROM_PERIODICAL_TYPE + "WHERE periodical_type.type= ?")) {
+            statement.setString(1, type);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    periodicalType = new PeriodicalType(resultSet.getInt("id"),
+                            resultSet.getString("type"));
+                }
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to find type by periodical_type", e);
+        }
+        return periodicalType;
     }
 
     @Override

@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<jsp:include page="../views/header.jsp"/>
+<jsp:include page="header.jsp"/>
 <form name="registrationForm" action="register" method="post">
     <input type="hidden" name="command" value="register">
     <div class="formContainer">

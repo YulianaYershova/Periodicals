@@ -17,7 +17,8 @@
 </head>
 <body>
 
-<jsp:include page="../views/header.jsp"/>
+<jsp:include page="header.jsp"/>
+
 <form name="loginForm" action="login" method="post">
     <input type="hidden" name="command" value="login">
     <div class="formContainer">

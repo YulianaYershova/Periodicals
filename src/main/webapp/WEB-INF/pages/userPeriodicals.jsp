@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<jsp:include page="../views/header.jsp"/>
+<jsp:include page="header.jsp"/>
 <div class="container">
     <ul>
         <c:forEach var="item" items="${userPeriodicals}">

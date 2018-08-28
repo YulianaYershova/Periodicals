@@ -11,10 +11,10 @@ import persistence.entities.UserRole;
  */
 public class UserService {
 
-    private IUser iUser = DAOFactory.getMySqlDAOFactory().getUserDAO();
-    private IUserRole iUserRole = DAOFactory.getMySqlDAOFactory().getUserRoleDAO();
+    private static IUser iUser = DAOFactory.getMySqlDAOFactory().getUserDAO();
+    private static IUserRole iUserRole = DAOFactory.getMySqlDAOFactory().getUserRoleDAO();
 
-    public User login(String login, String password) {
+    public static User login(String login, String password) {
         User user = getUserByLogin(login);
         if (user != null && user.getPassword().equals(password)) {
             return user;
@@ -22,15 +22,15 @@ public class UserService {
         return null;
     }
 
-    public boolean register(User user) {
+    public static boolean register(User user) {
         return iUser.insertUser(user);
     }
 
-    public UserRole getUserRole(String role) {
+    public static UserRole getUserRole(String role) {
         return iUserRole.findRoleByRole(role);
     }
 
-    public User getUserByLogin(String login) {
+    public static User getUserByLogin(String login) {
         return iUser.findUserByLogin(login);
     }
 

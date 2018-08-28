@@ -19,10 +19,10 @@
 </head>
 <body>
 
-
 <div class="head">
     <h1><fmt:message key="periodicals"/></h1>
 </div>
+
 <catalog:getCatalog/>
 <div class="container">
     <ul>

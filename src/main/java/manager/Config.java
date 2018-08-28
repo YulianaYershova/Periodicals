@@ -1,7 +1,5 @@
 package manager;
 
-
-import javax.swing.plaf.PanelUI;
 import java.util.ResourceBundle;
 
 /**
@@ -18,6 +16,7 @@ public class Config {
     public static final String PERIODICAL = "PERIODICAL";
     public static final String SUBSCRIBE = "SUBSCRIBE";
     public static final String USER_PERIODICALS = "USER_PERIODICALS";
+    public static final String CREATE_PERIODICAL = "CREATE_PERIODICAL";
     public static final String ERROR = "ERROR";
 
     public static Config getInstance() {

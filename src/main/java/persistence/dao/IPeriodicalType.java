@@ -15,6 +15,14 @@ public interface IPeriodicalType {
     PeriodicalType findTypeById(int id);
 
     /**
+     * Type's selection by type
+     *
+     * @param type - type
+     * @return - type or null
+     */
+    PeriodicalType findTypeByPeriodicalType(String type);
+
+    /**
      * Insert new type
      *
      * @param type - type to be inserted to the database

@@ -15,14 +15,15 @@ public class ControllerHelper {
     private HashMap<String, ICommand> commands = new HashMap<>();
 
     private ControllerHelper() {
-        commands.put("register", new CommandRegistration());
+        commands.put("register", new CommandRegister());
         commands.put("login", new CommandLogin());
         commands.put("missing", new CommandMissing());
         commands.put("locale", new CommandLocale());
         commands.put("logout", new CommandLogout());
         commands.put("periodical", new CommandPeriodical());
-        commands.put("subscribe", new CommandSubscription());
-        commands.put("userPeriodicals", new CommandUserPeriodicals());
+        commands.put("subscribe", new CommandSubscribe());
+        commands.put("userPeriodicals", new CommandGetUserPeriodicals());
+        commands.put("createPeriodical", new CommandCreatePeriodical());
     }
 
     public static ControllerHelper getInstance() {

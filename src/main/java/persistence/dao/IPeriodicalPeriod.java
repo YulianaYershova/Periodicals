@@ -17,6 +17,14 @@ public interface IPeriodicalPeriod {
     PeriodicalPeriod findPeriodById(int id);
 
     /**
+     * Period's selection by period
+     *
+     * @param type - period
+     * @return - period or null
+     */
+    PeriodicalPeriod findPeriodByPeriodicalPeriod(String type);
+
+    /**
      * Selection all period in the database
      *
      * @return - list of period

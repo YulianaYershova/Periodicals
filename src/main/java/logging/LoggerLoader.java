@@ -9,5 +9,4 @@ public class LoggerLoader {
     public static Logger getLogger(Class clazz) {
         return Logger.getLogger(clazz);
     }
-
 }
