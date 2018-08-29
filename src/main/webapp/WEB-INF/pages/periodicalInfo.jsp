@@ -17,11 +17,11 @@
     <fmt:setBundle basename="message"/>
 </head>
 <body>
+
 <c:set var="role" scope="session" value="${role}"/>
 <jsp:include page="header.jsp"/>
+
 <div class="container">
-    <ul>
-        <li>
             <c:set var="item" scope="session" value="${periodical}"/>
             <div class="type"><c:out value="${item.getPeriodicalType().getType()}"/></div>
             <div class="mainHeader">${item.getTitle()}</div>
@@ -44,12 +44,12 @@
                 </c:when>
                 <c:otherwise>
                     <form name="subscribeForm" action="subscribe" method="post">
-                        <select name="period">
+                        <select name="term">
                             <option disabled>Select period</option>
-                            <option value="month">month</option>
-                            <option value="threeMonth">threeMonth</option>
-                            <option value="sixMonth">sixMonth</option>
-                            <option value="year">year</option>
+                            <option value="1">month</option>
+                            <option value="3">threeMonth</option>
+                            <option value="6">sixMonth</option>
+                            <option value="12">year</option>
                         </select>
                         <input type="hidden" name="command" value="subscribe" required>
                         <div class="submitButton">
@@ -58,8 +58,6 @@
                     </form>
                 </c:otherwise>
             </c:choose>
-        </li>
-    </ul>
 </div>
 </body>
 </html>

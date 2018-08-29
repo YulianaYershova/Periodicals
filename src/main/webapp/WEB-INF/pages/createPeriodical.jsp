@@ -21,6 +21,7 @@
         <input type="text" placeholder="Enter title" name="title" required>
 
         <label><b>Type</b></label>
+        <%-- <input type="text" placeholder="Enter type" name="type" required>--%>
         <select name="type">
             <option disabled>Select type</option>
             <option value="newspaper">newspaper</option>

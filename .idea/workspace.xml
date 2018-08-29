@@ -6,44 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0fb5cd3-7212-4b9d-a57f-d8a1087d033b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandCreatePeriodical.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLocale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLocale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandMissing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandMissing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandPeriodical.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandPeriodical.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandUserPeriodicals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandGetUserPeriodicals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filters/CacheFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logging/LoggerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logging/LoggerLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalPeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalPeriod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalPeriodDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalPeriodDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalTypeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalTypeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/PeriodicalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/PeriodicalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/SubscriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/SubscriptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ControllerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ControllerHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/info.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/info.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/periodicals.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/periodicals.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/periodical.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/periodical.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userPeriodicals.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userPeriodicals.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/images/image1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="c0fb5cd3-7212-4b9d-a57f-d8a1087d033b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +58,7 @@
     <session id="-1004826946">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="29" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="2" />
@@ -104,7 +67,6 @@
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.29" value="2" />
           <entry key="project.open.time.3" value="9" />
@@ -114,7 +76,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -123,12 +85,12 @@
           <entry key="css" value="35" />
           <entry key="fxml" value="1" />
           <entry key="html" value="7" />
-          <entry key="java" value="975" />
+          <entry key="java" value="971" />
           <entry key="jpg" value="8" />
-          <entry key="jsp" value="539" />
+          <entry key="jsp" value="527" />
           <entry key="message" value="10" />
           <entry key="png" value="8" />
-          <entry key="properties" value="167" />
+          <entry key="properties" value="165" />
           <entry key="sql" value="10" />
           <entry key="tld" value="13" />
           <entry key="xml" value="57" />
@@ -140,9 +102,9 @@
           <entry key="CSS" value="35" />
           <entry key="HTML" value="7" />
           <entry key="Image" value="16" />
-          <entry key="JAVA" value="975" />
-          <entry key="JSP" value="539" />
-          <entry key="Properties" value="167" />
+          <entry key="JAVA" value="971" />
+          <entry key="JSP" value="527" />
+          <entry key="Properties" value="165" />
           <entry key="ResourceBundle" value="10" />
           <entry key="SQL" value="9" />
           <entry key="Scratch" value="1" />
@@ -152,10 +114,10 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="540" />
-          <entry key="dummy" value="63" />
-          <entry key="java" value="8523" />
-          <entry key="jsp" value="6290" />
-          <entry key="properties" value="1124" />
+          <entry key="dummy" value="59" />
+          <entry key="java" value="8510" />
+          <entry key="jsp" value="6266" />
+          <entry key="properties" value="1075" />
           <entry key="tld" value="93" />
           <entry key="txt" value="11" />
           <entry key="xml" value="453" />
@@ -164,12 +126,63 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="540" />
-          <entry key="JAVA" value="8520" />
-          <entry key="JSP" value="6290" />
-          <entry key="PLAIN_TEXT" value="74" />
-          <entry key="Properties" value="1124" />
+          <entry key="JAVA" value="8507" />
+          <entry key="JSP" value="6266" />
+          <entry key="PLAIN_TEXT" value="70" />
+          <entry key="Properties" value="1075" />
           <entry key="SQL" value="3" />
           <entry key="XML" value="546" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.go.postfix.template.usages.trigger" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+    </session>
+    <session id="-1964140192">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="1" />
+          <entry key="java" value="167" />
+          <entry key="jsp" value="16" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="JAVA" value="167" />
+          <entry key="JSP" value="16" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="8" />
+          <entry key="java" value="2064" />
+          <entry key="jsp" value="18" />
+          <entry key="properties" value="8" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2063" />
+          <entry key="JSP" value="18" />
+          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="Properties" value="8" />
+          <entry key="SQL" value="1" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger" />
@@ -181,31 +194,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminPage.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="540">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/createPeriodical.jsp">
+        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/math/BigDecimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-              <folding>
-                <element signature="n#style#0;n#label#6;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="28240">
+              <caret line="1456" column="30" selection-start-line="1456" selection-start-column="22" selection-end-line="1456" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/SubscriptionService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="300">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,10 +224,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandCreatePeriodical.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/transactionManager/SubscribeManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
+            <state relative-caret-position="354">
+              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -226,46 +236,81 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/info.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/SubscriptionDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="24" selection-start-line="4" selection-end-line="4" selection-end-column="24" />
+            <state relative-caret-position="2100">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/manager/Config.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PaymentDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+            <state relative-caret-position="1440">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/manager/Info.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/AccountDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="1680">
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+            <state relative-caret-position="840">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#959#960#0" expanded="true" />
+                <element signature="e#996#997#0" expanded="true" />
+                <element signature="e#1027#1028#0" expanded="true" />
+                <element signature="e#1092#1093#0" expanded="true" />
+                <element signature="e#1123#1124#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1182#1183#0" expanded="true" />
+                <element signature="e#1210#1211#0" expanded="true" />
+                <element signature="e#1245#1246#0" expanded="true" />
+                <element signature="e#1276#1277#0" expanded="true" />
+                <element signature="e#1309#1310#0" expanded="true" />
+                <element signature="e#1337#1338#0" expanded="true" />
+                <element signature="e#1387#1388#0" expanded="true" />
+                <element signature="e#1427#1428#0" expanded="true" />
+                <element signature="e#1474#1475#0" expanded="true" />
+                <element signature="e#1512#1513#0" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
+                <element signature="e#1584#1585#0" expanded="true" />
+                <element signature="e#1626#1627#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
+                <element signature="e#1748#1749#0" expanded="true" />
+                <element signature="e#2292#2293#0" expanded="true" />
+                <element signature="e#2373#2374#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/content.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/Subscription.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="820">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="e#1009#1010#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,16 +323,15 @@
         <option value="FxmlFile" />
         <option value="HTML File" />
         <option value="Tag Library Descriptor" />
-        <option value="Interface" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>head</find>
-      <find>mainHeader</find>
       <find>type</find>
       <find>red</find>
       <find>forTitle</find>
@@ -316,6 +360,8 @@
       <find>text</find>
       <find>pass</find>
       <find>passw</find>
+      <find>Pay</find>
+      <find>price</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -324,57 +370,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/filters/EncodingFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/filters/СacheFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/filters/CacheFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/ICommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandRegistration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandUserPeriodicals.java" />
-        <option value="$PROJECT_DIR$/src/main/java/filters/LoginRegisterFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userPeriodicals.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/entities/PeriodicalPeriod.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/entities/Periodical.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/MySqlDAOFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/DAOFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscription.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalType.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalTypeDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalPeriodDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalPeriod.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/ControllerHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/manager/Message.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/periodical.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/service/PeriodicalService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/SubscriptionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLocale.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogout.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandMissing.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandPeriodical.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandRegister.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandGetUserPeriodicals.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/logging/LoggerLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandCreatePeriodical.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandGetUserPeriodicals.java" />
+        <option value="$PROJECT_DIR$/src/main/java/manager/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandPeriodicalInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/content.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/createPeriodical.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/info.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/manager/Config.java" />
-        <option value="$PROJECT_DIR$/src/main/java/manager/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userPeriodicals.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/ControllerHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/entities/Account.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/entities/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/DAOFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/MySqlDAOFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/DAOManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandRegister.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/SubscribeManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/entities/Payment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/IAccount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/IPayment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/ISubscription.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/AccountDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PaymentDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/SubscriptionDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/transactionManager/SubscribeManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/entities/Period.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/entities/PeriodicalPeriod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalPeriodDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/periodicalInfo.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/manager/Info.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandCreatePeriodical.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/info.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/service/SubscriptionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java" />
       </list>
     </option>
   </component>
@@ -414,7 +460,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1270" />
     <option name="width" value="1302" />
     <option name="height" value="1532" />
@@ -435,8 +481,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -501,27 +545,12 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Periodicals" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Periodicals" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Periodicals" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Periodicals" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,9 +558,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535451572026" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535494631827" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Periodicals" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -690,19 +719,20 @@
       <workItem from="1535007146002" duration="5414000" />
       <workItem from="1535200787617" duration="19839000" />
       <workItem from="1535275639246" duration="628000" />
-      <workItem from="1535365198570" duration="31840000" />
-      <workItem from="1535450095132" duration="1476000" />
+      <workItem from="1535365198570" duration="30616000" />
+      <workItem from="1535454788876" duration="26545000" />
+      <workItem from="1535536674777" duration="153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301777000" />
+    <option name="totallyTimeSpent" value="325775000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="773" extended-state="6" />
+    <frame x="635" y="0" width="651" height="766" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976378" visible="true" weight="0.297166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976378" visible="true" weight="0.63237774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" sideWeight="0.5023622" side_tool="true" weight="0.5649241" />
       <window_info id="Image Layers" order="3" />
@@ -712,8 +742,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3271028" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.45171338" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.34579438" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.44548288" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4376947" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -786,30 +816,16 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/periodical.jsp</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlet/Controller.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlet/Controller.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java</url>
           <line>21</line>
-          <properties class="commands.commandImpl.CommandSubscribe">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="20" />
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -819,47 +835,45 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalCategory.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/PeriodicalPeriod.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        <state relative-caret-position="373">
+          <caret line="375" column="2" selection-start-line="375" selection-end-line="378" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalCategoryDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/DAOFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+        <state relative-caret-position="233">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/MySqlDAOFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/content.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="28" column="53" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="53" />
+        <state relative-caret-position="237">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/dataSource/DataSource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="34">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/UserDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="58" selection-end-column="5" />
+        <state relative-caret-position="-280">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/createPeriodical.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="43" />
+        <state relative-caret-position="40">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -870,289 +884,349 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalPeriod.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/AbstractDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+        <state relative-caret-position="160">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/DAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/daoFactory/MySqlDAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.sql/java/sql/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="234" column="12" selection-start-line="234" selection-start-column="12" selection-end-line="234" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/IUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/ControllerHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="334">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalTypeDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="900">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalPeriodDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="420">
+          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/Periodical.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/IAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="297">
+          <caret line="42" column="85" selection-start-line="42" selection-start-column="85" selection-end-line="42" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/IPayment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="294">
+          <caret line="35" column="85" selection-start-line="35" selection-start-column="85" selection-end-line="35" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/ISubscription.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="206" column="27" selection-start-line="206" selection-start-column="27" selection-end-line="206" selection-end-column="27" />
+        <state relative-caret-position="165">
+          <caret line="37" column="100" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandMissing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/transactionManager/DAOManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="15" selection-end-line="94" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLocale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandMissing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandPeriodical.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandGetUserPeriodicals.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filters/CacheFilter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ICommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/images/image1.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/images/book.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filters/LoginRegisterFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filters/EncodingFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logging/LoggerLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/PeriodicalService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/SubscriptionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/periodicals.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userPeriodicals.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1-sources.jar!/javax/servlet/http/HttpServletRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/periodical.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="385">
+          <caret line="580" column="23" selection-start-line="580" selection-start-column="23" selection-end-line="580" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="60" column="46" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#label#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="443">
+          <caret line="33" column="66" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/content.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userPeriodicals.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="377">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/createPeriodical.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/Period.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#label#6;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandCreatePeriodical.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/manager/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/PeriodicalService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+        <state relative-caret-position="283">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/PeriodicalPeriod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        <state relative-caret-position="334">
+          <caret line="63" column="18" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/IPeriodicalPeriod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PeriodicalPeriodDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2180">
+          <caret line="116" column="50" selection-start-line="116" selection-start-column="50" selection-end-line="116" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/periodicalInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/manager/Info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/info.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="4" column="24" selection-start-line="4" selection-end-line="4" selection-end-column="24" />
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/manager/Info.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/manager/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="140">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandCreatePeriodical.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
+        <state relative-caret-position="440">
+          <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandImpl/CommandSubscribe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/math/BigDecimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28240">
+          <caret line="1456" column="30" selection-start-line="1456" selection-start-column="22" selection-end-line="1456" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/SubscriptionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/SubscriptionDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/PaymentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/dao/mySqlDAOImpl/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
+            <element signature="e#1427#1428#0" expanded="true" />
+            <element signature="e#1474#1475#0" expanded="true" />
+            <element signature="e#1512#1513#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1626#1627#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
+            <element signature="e#1748#1749#0" expanded="true" />
+            <element signature="e#2292#2293#0" expanded="true" />
+            <element signature="e#2373#2374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/entities/Subscription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#1009#1010#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/transactionManager/SubscribeManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
