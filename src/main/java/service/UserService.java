@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import persistence.dao.IUser;
 import persistence.dao.IUserRole;
 import persistence.dao.daoFactory.DAOFactory;
-import persistence.dao.mySqlDAOImpl.UserDAO;
+import persistence.dao.daoFactory.MySqlDAOFactory;
 import persistence.entities.User;
 import persistence.entities.UserRole;
 import service.transactionManager.RegisterManager;
@@ -17,8 +17,7 @@ import java.sql.SQLException;
  */
 public class UserService {
     private static final Logger logger = LoggerLoader.getLogger(UserService.class);
-    private static IUser iUser = DAOFactory.getMySqlDAOFactory().getUserDAO();
-    private static IUserRole iUserRole = DAOFactory.getMySqlDAOFactory().getUserRoleDAO();
+    private static MySqlDAOFactory mySqlDAOFactory = DAOFactory.getMySqlDAOFactory();
 
     public static User login(String login, String password) {
         User user = getUserByLogin(login);
@@ -34,6 +33,7 @@ public class UserService {
     }
 
     public static UserRole getUserRole(String role) {
+        IUserRole iUserRole = mySqlDAOFactory.getUserRoleDAO();
         try {
             return iUserRole.findRoleByRole(role);
         } catch (SQLException e) {
@@ -43,6 +43,7 @@ public class UserService {
     }
 
     public static User getUserByLogin(String login) {
+        IUser iUser = mySqlDAOFactory.getUserDAO();
         try {
             return iUser.findUserByLogin(login);
         } catch (SQLException e) {

@@ -60,31 +60,28 @@ public class AccountDAO extends AbstractDAO implements IAccount {
     }
 
     @Override
-    public boolean insertAccount(Account account, Connection connection) throws SQLException {
+    public void insertAccount(Account account, Connection connection) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(INSERT_ACCOUNT)) {
             statement.setInt(1, account.getId());
             statement.setBigDecimal(2, account.getAmount());
             statement.executeUpdate();
         }
-        return true;
     }
 
     @Override
-    public boolean updateAccount(Account account, Connection connection) throws SQLException {
+    public void updateAccount(Account account, Connection connection) throws SQLException {
         PreparedStatement statement = connection.prepareStatement(UPDATE_ACCOUNT);
         statement.setBigDecimal(1, account.getAmount());
         statement.setInt(2, account.getId());
         statement.executeUpdate();
-        return true;
     }
 
     @Override
-    public boolean deleteAccount(Account account) throws SQLException {
+    public void deleteAccount(Account account) throws SQLException {
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(DELETE_ACCOUNT)) {
             statement.setInt(1, account.getId());
             statement.executeUpdate();
         }
-        return true;
     }
 }

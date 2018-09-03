@@ -20,10 +20,10 @@ public class RegisterManager extends TransactionManager {
     private static final Logger logger = LoggerLoader.getLogger(RegisterManager.class);
 
     private MySqlDAOFactory mySqlDAOFactory = DAOFactory.getMySqlDAOFactory();
-    private IUser iUser = mySqlDAOFactory.getUserDAO();
-    private IAccount iAccount = mySqlDAOFactory.getAccountDAO();
 
     public boolean register(User user) {
+        IUser iUser = mySqlDAOFactory.getUserDAO();
+        IAccount iAccount = mySqlDAOFactory.getAccountDAO();
         Connection connection = null;
         try {
             connection = getConnection();

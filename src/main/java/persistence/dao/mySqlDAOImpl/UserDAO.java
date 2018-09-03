@@ -78,7 +78,7 @@ public class UserDAO extends AbstractDAO implements IUser {
     }
 
     @Override
-    public boolean insertUser(User user, Connection connection) throws SQLException {
+    public void insertUser(User user, Connection connection) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(INSERT_USER, Statement.RETURN_GENERATED_KEYS)) {
             statement.setInt(1, user.getUserRole().getId());
             statement.setString(2, user.getName());
@@ -86,12 +86,11 @@ public class UserDAO extends AbstractDAO implements IUser {
             statement.setString(4, user.getPassword());
             statement.executeUpdate();
             user.setId(getGeneratedKey(statement));
-            return true;
         }
     }
 
     @Override
-    public boolean updateUser(User user) throws SQLException {
+    public void updateUser(User user) throws SQLException {
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_USER)) {
             statement.setInt(1, user.getUserRole().getId());
@@ -101,16 +100,14 @@ public class UserDAO extends AbstractDAO implements IUser {
             statement.setInt(5, user.getId());
             statement.executeUpdate();
         }
-        return true;
     }
 
     @Override
-    public boolean deleteUser(User user) throws SQLException {
+    public void deleteUser(User user) throws SQLException {
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(DELETE_USER)) {
             statement.setInt(1, user.getId());
             statement.executeUpdate();
         }
-        return true;
     }
 }

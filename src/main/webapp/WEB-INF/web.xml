@@ -33,7 +33,8 @@
         <url-pattern>/createPeriodical</url-pattern>
         <url-pattern>/updatePeriodical</url-pattern>
         <url-pattern>/deletePeriodical</url-pattern>
-        <url-pattern>/info</url-pattern>
+        <url-pattern>/subscriptionsInfo</url-pattern>
+        <url-pattern>/userPeriodicals</url-pattern>
         <url-pattern>/catalog</url-pattern>
     </servlet-mapping>
 
