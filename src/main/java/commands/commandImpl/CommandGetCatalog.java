@@ -20,7 +20,7 @@ public class CommandGetCatalog implements ICommand {
         int recordsPerPage = Integer.valueOf(request.getParameter("recordsPerPage"));
 
 
-        ArrayList<Periodical> periodicals = PeriodicalService.getPeriodicals(currentPage,recordsPerPage);
+        ArrayList<Periodical> periodicals = PeriodicalService.getAllPeriodicals(currentPage,recordsPerPage);
         request.setAttribute("periodicals", periodicals);
 
         int rows = PeriodicalService.getNumberOfRows();

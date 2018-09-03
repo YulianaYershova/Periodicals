@@ -78,17 +78,16 @@ public class UserDAO extends AbstractDAO implements IUser {
     }
 
     @Override
-    public boolean insertUser(User user) throws SQLException {
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(INSERT_USER, Statement.RETURN_GENERATED_KEYS)) {
+    public boolean insertUser(User user, Connection connection) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(INSERT_USER, Statement.RETURN_GENERATED_KEYS)) {
             statement.setInt(1, user.getUserRole().getId());
             statement.setString(2, user.getName());
             statement.setString(3, user.getLogin());
             statement.setString(4, user.getPassword());
             statement.executeUpdate();
             user.setId(getGeneratedKey(statement));
+            return true;
         }
-        return true;
     }
 
     @Override

@@ -2,6 +2,7 @@ package persistence.dao;
 
 import persistence.entities.User;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
@@ -32,7 +33,7 @@ public interface IUser {
      * @param user - user to be inserted to the database
      * @return - {@code true} if new user id added, {@code false} if no records is inserted
      */
-    boolean insertUser(User user) throws SQLException;
+    boolean insertUser(User user, Connection connection) throws SQLException;
 
     /**
      * Update user info

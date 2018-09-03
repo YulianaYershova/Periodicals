@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class SubscriptionDAO extends AbstractDAO implements ISubscription {
 
-    DAOFactory daoFactory = new MySqlDAOFactory();
+    private DAOFactory daoFactory = new MySqlDAOFactory();
 
     private static SubscriptionDAO subscriptionDAO;
 
@@ -99,7 +99,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
         statement.setInt(1, subscription.getUser().getId());
         statement.setInt(2, subscription.getPeriodical().getId());
         statement.setInt(3, subscription.getPayment().getId());
-        statement.setTimestamp(4, subscription.getExpiration_date());
+        statement.setTimestamp(4, subscription.getExpirationDate());
         statement.executeUpdate();
         return true;
     }
@@ -111,7 +111,7 @@ public class SubscriptionDAO extends AbstractDAO implements ISubscription {
             statement.setInt(1, subscription.getUser().getId());
             statement.setInt(2, subscription.getPeriodical().getId());
             statement.setInt(3, subscription.getPayment().getId());
-            statement.setTimestamp(4, subscription.getExpiration_date());
+            statement.setTimestamp(4, subscription.getExpirationDate());
             statement.executeUpdate();
         }
         return true;

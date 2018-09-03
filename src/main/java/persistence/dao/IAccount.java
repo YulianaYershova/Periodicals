@@ -31,7 +31,7 @@ public interface IAccount {
      * @param account - account to be inserted to the database
      * @return - {@code true} if new account id added, {@code false} if no records is inserted
      */
-    boolean insertAccount(Account account) throws SQLException;
+    boolean insertAccount(Account account,Connection connection) throws SQLException;
 
     /**
      * Update account info

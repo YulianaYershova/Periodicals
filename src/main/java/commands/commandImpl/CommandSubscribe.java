@@ -41,7 +41,8 @@ public class CommandSubscribe implements ICommand {
             return Config.getInstance().getProperty(Config.PERIODICAL_INFO);
         }
         if (!SubscriptionService.subscribe(user, periodical, totalAmount, term)) {
-            return Config.getInstance().getProperty(Config.ERROR);
+            request.setAttribute("info", Info.getInstance().getProperty(Info.ERROR));
+            return Config.getInstance().getProperty(Config.PERIODICAL_INFO);
         }
         logger.info(user.getLogin() + " subscribed to " + periodical.getTitle());
         request.setAttribute("info", Info.getInstance().getProperty(Info.DONE));

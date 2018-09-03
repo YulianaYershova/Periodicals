@@ -2,7 +2,6 @@ package commands.commandImpl;
 
 import commands.ICommand;
 import manager.Config;
-import persistence.entities.Period;
 import persistence.entities.Periodical;
 import persistence.entities.User;
 import service.PeriodicalService;

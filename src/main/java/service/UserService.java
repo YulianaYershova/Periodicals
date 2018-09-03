@@ -8,6 +8,7 @@ import persistence.dao.daoFactory.DAOFactory;
 import persistence.dao.mySqlDAOImpl.UserDAO;
 import persistence.entities.User;
 import persistence.entities.UserRole;
+import service.transactionManager.RegisterManager;
 
 import java.sql.SQLException;
 
@@ -28,12 +29,8 @@ public class UserService {
     }
 
     public static boolean register(User user) {
-        try {
-            return iUser.insertUser(user);
-        } catch (SQLException e) {
-            logger.error("Failed to insert user", e);
-            return false;
-        }
+        RegisterManager registerManager = new RegisterManager();
+        return registerManager.register(user);
     }
 
     public static UserRole getUserRole(String role) {

@@ -36,6 +36,13 @@
         <c:when test="${role=='admin'}">
             <%--<form name="updateForm" action="updatePeriodical" method="post">--%>
             <a href="updatePeriodical">Update Periodical</a>
+            <a href="updatePeriodical">Delete Periodical</a>
+            <form name="deletePeriodical" action="deletePeriodical" method="post">
+                <input type="hidden" name="command" value="deletePeriodical">
+                <div class="submitButton">
+                    <button type="submit">Delete periodical</button>
+                </div>
+            </form>
             <%--<input type="hidden" name="command" value="updatePeriodical" required>--%>
             <%-- <div class="submitButton">
                  <button type="submit">Update periodical</button>

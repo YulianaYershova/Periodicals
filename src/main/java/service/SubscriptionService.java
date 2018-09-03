@@ -4,7 +4,6 @@ import logging.LoggerLoader;
 import org.apache.log4j.Logger;
 import persistence.dao.ISubscription;
 import persistence.dao.daoFactory.DAOFactory;
-import persistence.dao.mySqlDAOImpl.SubscriptionDAO;
 import persistence.entities.Payment;
 import persistence.entities.Periodical;
 import persistence.entities.Subscription;
@@ -34,17 +33,36 @@ public class SubscriptionService {
     }
 
     public static ArrayList<Periodical> getUserPeriodicals(User user) {
-        ArrayList<Subscription> subscriptions = null;
+        ArrayList<Subscription> subscriptions;
         try {
             subscriptions = iSubscription.findSubscriptionsByUser(user.getId());
         } catch (SQLException e) {
             logger.error("Failed to find subscriptions by user", e);
+            return null;
         }
         ArrayList<Periodical> periodicals = new ArrayList<>();
         for (Subscription subscription : subscriptions) {
             periodicals.add(subscription.getPeriodical());
         }
         return periodicals;
+    }
+
+    public static ArrayList<Subscription> getAllSubscriptions() {
+        try {
+            return iSubscription.getAllSubscription();
+        } catch (SQLException e) {
+            logger.error("Failed to get all subscriptions ", e);
+            return null;
+        }
+    }
+
+    public static boolean deleteSubscription(Subscription subscription) {
+        try {
+            return iSubscription.deleteSubscription(subscription);
+        } catch (SQLException e) {
+            logger.error("Failed to delete subscription ", e);
+            return false;
+        }
     }
 
     private static Timestamp getExpirationDate(Timestamp subscriptionDate, int term) {

@@ -10,6 +10,7 @@ import persistence.dao.daoFactory.MySqlDAOFactory;
 import persistence.entities.Periodical;
 import persistence.entities.PeriodicalPeriod;
 import persistence.entities.PeriodicalType;
+import persistence.entities.Subscription;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -21,12 +22,13 @@ import java.util.ArrayList;
 public class PeriodicalService {
 
     private static final Logger logger = LoggerLoader.getLogger(PeriodicalService.class);
+
     private static MySqlDAOFactory mySqlDAOFactory = DAOFactory.getMySqlDAOFactory();
     private static IPeriodical iPeriodical = mySqlDAOFactory.getPeriodicalDAO();
     private static IPeriodicalType iPeriodicalType = mySqlDAOFactory.getPeriodicalTypeDAO();
     private static IPeriodicalPeriod iPeriodicalPeriod = mySqlDAOFactory.getPeriodicalPeriodDAO();
 
-    public static ArrayList<Periodical> getPeriodicals(int currentPage, int recordsPerPage) {
+    public static ArrayList<Periodical> getAllPeriodicals(int currentPage, int recordsPerPage) {
         int start = currentPage * recordsPerPage - recordsPerPage;
         try {
             return iPeriodical.findAllPeriodicals(start, recordsPerPage);
@@ -88,6 +90,21 @@ public class PeriodicalService {
             return iPeriodical.updatePeriodical(periodical);
         } catch (SQLException e) {
             logger.error("Failed to update periodical ", e);
+            return false;
+        }
+    }
+
+    public static boolean deletePeriodical(Periodical periodical) {
+        ArrayList<Subscription> subscriptions = SubscriptionService.getAllSubscriptions();
+        for (Subscription subscription : subscriptions) {
+            if (subscription.getPeriodical().getId() == periodical.getId()) {
+                SubscriptionService.deleteSubscription(subscription);
+            }
+        }
+        try {
+            return iPeriodical.deletePeriodical(periodical);
+        } catch (SQLException e) {
+            logger.error("Failed to delete periodical ", e);
             return false;
         }
     }

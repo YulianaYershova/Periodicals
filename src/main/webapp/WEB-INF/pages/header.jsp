@@ -29,6 +29,7 @@
             <c:choose>
                 <c:when test="${role=='admin'}">
                     <a href="createPeriodical">Create periodical</a>
+                    <a href="info?command=info">Info</a>
                 </c:when>
                 <c:otherwise>
                     <a href="Controller?command=getUserPeriodicals">My periodicals</a>
