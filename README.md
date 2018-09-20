@@ -2,8 +2,8 @@
 
 ### Description
 
-**Administrator** maintains a catalog of **periodicals**.
-The **reader** can **subscribe** by pre-selecting the **periodicals** from the catalog.
+**Administrator** maintains a catalog of **periodicals**.<br />
+The **reader** can **subscribe** by pre-selecting the **periodicals** from the catalog.<br />
 The system calculates the amount for payment and registers the **payment**.
 
 ------------------
