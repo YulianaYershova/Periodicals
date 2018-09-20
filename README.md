@@ -1,12 +1,6 @@
-> ## Система Периодические издания
-
 > ## System of Periodicals 
 
 ### Description
-
-**Администратор** осуществляет ведение каталога периодических **изданий**. 
-**Читатель** может оформить **подписку**, предварительно выбрав периодические **издания** из списка. 
-Система подсчитывает сумму для оплаты и регистрирует **платеж**.
 
 **Administrator** maintains a catalog of **periodicals**.
 The **reader** can **subscribe** by pre-selecting the **periodicals** from the catalog.
