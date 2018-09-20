@@ -13,9 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 public class CommandMissing implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-       /* if (request.getRequestURI().equals("/login") || request.getRequestURI().equals("/register")) {
-            return "/WEB-INF/pages" + request.getRequestURI() + ".jsp";
-        }*/
         String path = request.getRequestURI();
         switch (path) {
             case "/login":
