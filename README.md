@@ -15,11 +15,11 @@ The system calculates the amount for payment and registers the **payment**.
 ------------------
 
 ### Technologies
-* JSP + JSTL;
-* Servlets;
-* JDBC;
-* Log4J;
-* JUnit.
+* JSP + JSTL
+* Servlets
+* JDBC
+* Log4J
+* JUnit
 * Mockito
 ------------------
 
