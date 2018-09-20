@@ -1,6 +1,6 @@
-> Система Периодические издания
+> ## Система Периодические издания
 
-> System of Periodicals 
+> ## System of Periodicals 
 
 ### Description
 
